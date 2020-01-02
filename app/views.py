@@ -7,7 +7,7 @@ from django.shortcuts import HttpResponse,redirect,render
 def login(request):
   #  return render(request,"login.html")
   #  return HttpResponse('你好')
-  return redirect('/index/');
+  return redirect('/index/')
 
 def index(request):
   COOKIES = request.COOKIES

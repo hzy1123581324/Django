@@ -7,6 +7,9 @@ class LoginView(ListView):
 
   def get(self, request):
     # <view logic>
+    import time
+    time.sleep(10)
+    
     return HttpResponse('55555555555555555')
 
   def post(self,request):

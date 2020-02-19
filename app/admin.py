@@ -3,10 +3,16 @@ from .models import User
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-    pass
+    fieldsets = [
+        ('名称', {'fields': ['nickname','username']}),
+        ('密码', {'fields': ['password','paypassword']}),
+    ]
+    # fields = ['nickname', 'username','password','paypassword']
     # list_display = ['id','name','source','contact_type','contact','consultant','consult_content','status','date']
     # list_filter = ['source','consultant','status','date']
-    # search_fields = ['contact','consultant__name']
+    search_fields = ['username','nickname']
+
+    
 
     # readonly_fields = ['status','contact']
     # filter_horizontal = ['consult_courses',]

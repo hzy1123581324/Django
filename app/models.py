@@ -34,8 +34,9 @@ class User(models.Model):
     # menus = models.ManyToManyField("Menus",blank=True)
     class Meta:
         verbose_name_plural  = '用户表'
+
     def __str__(self):
-        return self.username
+        return "%s-%s" %(self.username,self.password,)
 
 class Authority(models.Model):
     """

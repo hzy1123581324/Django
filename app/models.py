@@ -38,7 +38,7 @@ class User(models.Model):
     def __str__(self):
         return "%s-%s" %(self.username,self.password,)
 
-class Authority(models.Model):
+class Role(models.Model):
     """
     用户可以是广告商也可以是广告设计者,也可以是游客,也可以是普通用户
 
@@ -65,6 +65,7 @@ class BrowseRecord(models.Model):
     browseId = models.SmallIntegerField(choices=[(0, '脱产'), (1, '周末'), (2, '网络班')], default=0)
     # user = models.OneToOneField('User')
     def __str__(self):
+        # 在admin中展示 
         return "%s" % self.start
 
 class wallet(models.Model):
@@ -85,7 +86,7 @@ class AdvertiserInformation(models.Model):
     '''
     pass
 
-class guanxi(models.Model):
+class relation(models.Model):
     """
     用户与用户之间的关系表
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User
+from .models import User,Role
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
@@ -26,7 +26,14 @@ class UserAdmin(admin.ModelAdmin):
     #list_per_page = 2
     # list_editable = ['has_homework',]
 
+class RoleAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('名称', {'fields': ['nickname','username']}),
+        ('密码', {'fields': ['password','paypassword']}),
+    ]
+
 
 # 注册
 admin.site.register(User,UserAdmin)
+admin.site.register(Role,RoleAdmin)
 

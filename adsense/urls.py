@@ -19,14 +19,38 @@ from django.urls import include
 from django.urls import path,re_path
 from web.views import views as web_views
 from app.views import views,login
+from django.conf import settings
+from django.conf.urls.static import static
+
+from django.views import static ##新增
+from django.conf import settings ##新增
+from django.conf.urls import url ##新增
+
+
+# 增加的条目
+handler400 = views.bad_request
+handler403 = views.permission_denied
+handler404 = views.page_not_found
+handler500 = views.page_error
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^static/(?P<path>.*)$', static.serve,
+      {'document_root': settings.STATIC_ROOT}, name='static'),
+
     path('', views.index),
     path('index/', views.index),
+    re_path('^page/.html$',web_views.index),
     path('test/', web_views.index),
     re_path('^login/', login.LoginView.as_view()),
-    # re_path('user/',include('user.urls'))
+    # re_path('^page/(?P<page>\w+).html?(?P<>)', views.detail, name="detail",)
 
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

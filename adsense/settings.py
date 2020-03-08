@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'alw7(sygs0m79!u77ewjkp!!q2dtdh8gkro*o^evln16xmkx!j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS列表为了防止黑客入侵，只允许列表中的ip地址访问
 
 # Application definition
 
@@ -132,7 +132,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # 配置静态别名
+STATIC_ROOT = 'static' ## 新增行
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR,'static' if DEBUG else '/static/'),
+    # 如果DEBUG为true执行static否则执行/static/
 )
 
+# Template location
+# TEMPLATE_DIRS = {
+#     os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "templates"),
+
+# }
+
+# if DEBUG:
+#     MEDIA_URL = '/media/'
+#     STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static-only")
+#     MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "media")
+#     STATICFLIES_DIRS = (
+#         os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static")
+
+#     )

@@ -2,18 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Banner(models.Model):
-    """
-    轮播图表
-    img:图片链接
-    url: 跳转链接
-    show: 是否显示
-    weight:权重（排列）
-    classify: 分类
-    """
-    # img = models.CharField(max_length=64,unique=True)
-    # menus = models.ManyToManyField("Menus",blank=True)
-    
 class User(models.Model):
     """
     用户表
@@ -21,6 +9,7 @@ class User(models.Model):
  
     """
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    # verbose_name
     # 用户id 自增
     nickname = models.CharField(max_length=64,unique=True)
     # 昵称
@@ -30,9 +19,9 @@ class User(models.Model):
     # 登录密码
     paypassword = models.CharField(max_length=6)
     # 支付密码
-    create = models.DateField(auto_now_add=True)
-    # 用户创建时间
-    # loginTime = models.DateField(auto_now_add=True)
+    
+    # gender = models.IntegerField()
+    
     # 用户登录时间
     
     # menus = models.ManyToManyField("Menus",blank=True)
@@ -42,6 +31,18 @@ class User(models.Model):
     def __str__(self):
         return "%s" %(self.username,)
 
+class UserTime(models.Model):
+    '''
+    用户行为时间表
+    loginTime 登录时间
+    create 创建时间
+    '''
+    # auto_now   自动创建---无论添加或修改，都是当前操作的时间
+    # auto_now_add 自动创建---永远是创建时的时间
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    create = models.DateField(auto_now_add=True)
+    loginTime = models.DateField(auto_now=True)
+    
 
 class Role(models.Model):
     """

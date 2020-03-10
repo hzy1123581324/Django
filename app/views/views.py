@@ -19,7 +19,7 @@ def index(request):
   # return render(request,"index.html")
 
 
-
+# 异常处理
 def page_not_found(request,exception,template_name='404.html'):
     return render(request, 'test.html')
 

@@ -21,7 +21,7 @@ def index(request):
 
 
 def page_not_found(request,exception,template_name='404.html'):
-    return render(request, template_name)
+    return render(request, 'test.html')
 
 
 def page_error(request,template_name='500.html'):

@@ -18,29 +18,34 @@ class User(models.Model):
     """
     用户表
     id: 用户id 自增
-    nickname: 昵称
-    username:用户名
-    password: 密码
-    paypassword: 6位数字的支付密码
-
-    create: 创建时间
+ 
     """
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    # 用户id 自增
     nickname = models.CharField(max_length=64,unique=True)
+    # 昵称
     username = models.CharField(max_length=32)
+    # 真实姓名
     password = models.CharField(max_length=64)
+    # 登录密码
     paypassword = models.CharField(max_length=6)
+    # 支付密码
     create = models.DateField(auto_now_add=True)
+    # 用户创建时间
+    # loginTime = models.DateField(auto_now_add=True)
+    # 用户登录时间
+    
     # menus = models.ManyToManyField("Menus",blank=True)
     class Meta:
         verbose_name_plural  = '用户表'
 
     def __str__(self):
-        return "%s-%s" %(self.username,self.password,)
+        return "%s" %(self.username,)
+
 
 class Role(models.Model):
     """
-    用户可以是广告商也可以是广告设计者,也可以是游客,也可以是普通用户
+    身份
 
     权限表
     id: 权限id
@@ -74,7 +79,7 @@ class wallet(models.Model):
     钱包表
     
     '''
-    pass
+    
 
 class AdvertiserInformation(models.Model):
     '''
@@ -92,3 +97,12 @@ class relation(models.Model):
 
     """
     pass
+
+
+class Recommend(models.Model):
+    '''
+    推荐表
+    '''
+    id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    
+

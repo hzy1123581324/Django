@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User,Role
+from .models.models import User,Role
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
@@ -7,7 +7,7 @@ class UserAdmin(admin.ModelAdmin):
         ('名称', {'fields': ['nickname','username']}),
         ('密码', {'fields': ['password','paypassword']}),
     ]
-    # fields = ['nickname', 'username','password','paypassword']
+    # fields = ['loginTime']
     # list_display = ['id','name','source','contact_type','contact','consultant','consult_content','status','date']
     # list_filter = ['source','consultant','status','date']
     search_fields = ['username','nickname']
@@ -27,10 +27,12 @@ class UserAdmin(admin.ModelAdmin):
     # list_editable = ['has_homework',]
 
 class RoleAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('名称', {'fields': ['nickname','username']}),
-        ('密码', {'fields': ['password','paypassword']}),
-    ]
+    # fieldsets = [
+    #     ('名称', {'fields': ['nickname','username']}),
+    #     ('密码', {'fields': ['password','paypassword']}),
+    # ]
+    fields = ['name', 'user',]
+    
 
 
 # 注册

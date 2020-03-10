@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'alw7(sygs0m79!u77ewjkp!!q2dtdh8gkro*o^evln16xmkx!j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 # ALLOWED_HOSTS列表为了防止黑客入侵，只允许列表中的ip地址访问
@@ -144,11 +144,11 @@ STATICFILES_DIRS = (
 
 # }
 
-# if DEBUG:
-#     MEDIA_URL = '/media/'
-#     STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static-only")
-#     MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "media")
-#     STATICFLIES_DIRS = (
-#         os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static")
+if DEBUG:
+    MEDIA_URL = '/media/'
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static-only")
+    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "media")
+    STATICFLIES_DIRS = (
+        os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static")
 
-#     )
+    )

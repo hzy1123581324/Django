@@ -1,13 +1,17 @@
 from django.shortcuts import HttpResponse,redirect,render
-
+# from django.db.models import Avg,Min,Sum,Max,Count
+# from django.db.models import Q,F
+from app.models.models import *
+from app.models.goodModels import *
 
 # Create your views here.
 
 
-def login(request):
-  #  return render(request,"login.html")
-  return HttpResponse('你好')
-  # return redirect('/index/');
+# def login(request):
+#   #  return render(request,"login.html")
+#   user =  User.objects.filter(name="人民出版社")[0]
+#   return HttpResponse('你好')
+#   # return redirect('/index/');
 
 def index(request):
   COOKIES = request.COOKIES
@@ -17,6 +21,41 @@ def index(request):
   data ='COOKIES:%s,SESSION:%s,'%(COOKIES,SESSION)
   return HttpResponse(data)
   # return render(request,"index.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # 异常处理

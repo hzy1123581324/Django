@@ -36,7 +36,7 @@ class UserDetails(models.Model):
     role = models.ForeignKey('Role',on_delete = models.CASCADE)
     paypassword = models.CharField(max_length=6)
     # 支付密码
-    sex_choices = ((0,'保密')，(1,'男'),(2,'女'),)
+    sex_choices = ((0,'保密'),(1,'男'),(2,'女'),)
     gender = models.PositiveSmallIntegerField(choices=sex_choices,blank=True,null=True,default=0)
     # 性别
 
@@ -114,8 +114,8 @@ class Recommend(models.Model):
     推荐表
     '''
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
-    parent = models.ForeignKey(User,on_delete=models.SET_NULL)
-    child = models.ForeignKey(User,on_delete)
+    parent = models.ForeignKey(User,on_delete = models.CASCADE)
+    child = models.ForeignKey(User,on_delete= models.CASCADE)
    
     
 

@@ -28,6 +28,6 @@ class LoginView(ListView):
     return HttpResponse('66666666')
 
 class register(ListView):
-  def
+  pass
 
 

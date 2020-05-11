@@ -116,7 +116,7 @@ class Recommend(models.Model):
     推荐表
     '''
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
-    parent = models.ForeignKey(User,null=True, related_name='parent_user',on_delete = models.SET_NULL,verbose_name= '上级')
+    parent = models.ForeignKey(User,null=True, related_name='parent_user',on_delete = models.CASCADE,verbose_name= '上级')
     child = models.ForeignKey(User, null=True,related_name='child_user',on_delete = models.CASCADE,verbose_name= '下级')
     class Meta:
         verbose_name_plural  = '推荐表'

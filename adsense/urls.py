@@ -42,6 +42,8 @@ urlpatterns = [
     path('index/', views.index),
     re_path('^page/.html$',web_views.index),
     path('test/', web_views.index),
+    path('getdata',views.getdata),
+    path('updated',views.updated),
     re_path('^login/', login.LoginView.as_view()),
     # re_path('^page/(?P<page>\w+).html?(?P<>)', views.detail, name="detail",)
 

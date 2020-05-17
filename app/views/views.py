@@ -19,15 +19,31 @@ def index(request):
   # username =  request.GET.get('username')
   # print(username)
   data ='COOKIES:%s,SESSION:%s,'%(COOKIES,SESSION)
-  return HttpResponse(data)
-  # return render(request,"index.html")
+#   return HttpResponse(data)
+  return render(request,"index.html")
+
+def getdata(request):
+    
+    return HttpResponse('7777')
 
 
+def updated(request):
+    print(request.POST)
+    print(request.FILES)
+    print(request.FILES.get('tt',None))
 
+    return HttpResponse('999999')
 
-
-
-
+def download(request):
+    filename = request.GET.get('file')
+    filepath = os.path.join(settings.MEDIA_ROOT, filename)
+    fp = open(filepath, 'rb')
+    response = StreamingHttpResponse(fp)
+    # response = FileResponse(fp)
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="%s"' % filename
+    return response
+    fp.close()
 
 
 

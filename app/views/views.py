@@ -1,7 +1,7 @@
 from django.shortcuts import HttpResponse,redirect,render
 # from django.db.models import Avg,Min,Sum,Max,Count
 # from django.db.models import Q,F
-from app.models.models import *
+from app.models.models import User
 from app.models.goodModels import *
 
 # Create your views here.
@@ -23,8 +23,10 @@ def index(request):
   return render(request,"index.html")
 
 def getdata(request):
-    
-    return HttpResponse('7777')
+    print('888888888888888888888888888888')
+    print(User,':::::::::::::::')
+    user = User.objects.all().values()
+    return HttpResponse(user)
 
 
 def updated(request):

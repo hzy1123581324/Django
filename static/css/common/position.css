@@ -1,0 +1,172 @@
+/*固定定位*/
+
+.fixed_top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+}
+
+.fixed_rg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.fixed_btm {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.fixed_center{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*绝对定位*/
+
+
+
+.absolute_top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.absolute_btm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.absolute_lf {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.absolute_rg {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.absolute_rg_center {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform:translateY(-50%);
+  transform: translateY(-50%);
+}
+.absolute_lf_center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform:translateY(-50%);
+  transform: translateY(-50%);
+}
+.absolute_top_center {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform:translateX(-50%);
+  transform: translateX(-50%);
+}
+.absolute_btm_center {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform:translateX(-50%);
+  transform: translateX(-50%);
+}
+.absolute_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.absolute_half {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.relative {
+  position: relative;
+}
+.z_10{
+  z-index: 10;
+}
+.z_20{
+  z-index: 20;
+}
+
+.z_30{
+  z-index: 30;
+}
+
+.z_40{
+  z-index: 40;
+}
+
+.z_50{
+  z-index: 50;
+}
+
+.z_60{
+  z-index: 60;
+}
+
+.z_70{
+  z-index: 70;
+}
+
+.z_80{
+  z-index: 80;
+}
+
+.z_90{
+  z-index: 90;
+}
+
+.z_100{
+  z-index: 100;
+}
+
+.z_200{
+  z-index: 200;
+}
+.z_999{
+  z-index: 999;
+}
+.z_9999{
+  z-index: 9999;
+}
+.z_9999999{
+  z-index: 9999999;
+}

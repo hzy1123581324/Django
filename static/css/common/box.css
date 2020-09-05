@@ -1,0 +1,55 @@
+/**********************盒模型**********************/
+
+/************边框*********************/
+
+.bor{
+	border: 1upx solid ;
+}
+.bor_btm{
+	border-bottom: 1upx solid #f6f6f6;
+}
+.bor_top{
+	border-top: 1upx solid #f6f6f6;
+}
+.bor_rg{
+	border-right: 1upx solid #f6f6f6;
+}
+.radius_6{border-radius:6upx}
+.radius_8{border-radius:8upx}
+.radius_10{border-radius:10upx}
+.radius_12{border-radius:12upx}
+.radius_14{border-radius:14upx}
+.radius_16{border-radius:16upx}
+.radius_18{border-radius:18upx}
+.radius_20{border-radius:20upx}
+.radius_22{border-radius:22upx}
+.radius_24{border-radius:24upx}
+.radius_26{border-radius:26upx}
+.radius_28{border-radius:28upx}
+.radius_30{border-radius:30upx}
+.radius_32{border-radius:32upx}
+.radius_34{border-radius:34upx}
+.radius_36{border-radius:36upx}
+.radius_38{border-radius:38upx}
+.radius_40{border-radius:40upx}
+.radius_42{border-radius:42upx}
+.radius_44{border-radius:44upx}
+.radius_46{border-radius:46upx}
+.radius_48{border-radius:48upx}
+.radius_50{border-radius:50upx}
+.radius_52{border-radius:52upx}
+.radius_54{border-radius:54upx}
+.radius_56{border-radius:56upx}
+.radius_58{border-radius:58upx}
+.radius_60{border-radius:60upx}
+.radius_c{
+	border-radius: 50%;
+}
+/*******************************/
+.block{
+	display: block !important;
+	width:100%;
+}
+.line_block{
+	display: inline-block !important;
+}

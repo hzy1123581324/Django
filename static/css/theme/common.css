@@ -1,0 +1,133 @@
+:root {
+	/* 宽度 */
+	--max-width: 1230px;
+	--max-width2: 1115px;
+	/* 高度 */
+	--height: 100%;
+
+	/* 长宽比 */
+	--aspect-ratio: 1;
+	/*正方形*/
+	--aspect-ratio-2: 2;
+	/*长1高2*/
+	--aspect-ratio-half: 0.5;
+	/*长2高1*/
+
+	/* 字体颜色 */
+	/* currentColor */
+	--color-main: #333;
+	--color-white: #fff;
+	--color-black: var(--color-main);
+	--color-theme: #2E74F3;
+	--color-theme-dark: #2E74F3; //深
+	--color-theme-deep: #2E74F3; //浅
+	--price-color: #C52929;
+	--color-price: #C52929;
+	--color-grey: #828282;
+
+	--placeholder-color: var(--color-grey);
+
+
+	/* 字体大小 */
+	--font-main: 28upx;
+
+	/* 背景色 */
+	--bg-grey: #F3F3F3;
+	--bg-white: #fff;
+	--bg-mask: rgba(0, 0, 0, 0.6);
+
+	/* 边框 */
+	--border-color: #BDBDBD;
+	--border-width: 2upx;
+	--border: var(--border-width) solid var(--border-color);
+	--border-black: var(--border-width) solid var(--color-black);
+
+	/* 圆角 */
+	--radius: 8upx;
+
+	/* 内边距 */
+	--padding-mini: 30upx;
+	--padding-medium: calc(var(--padding-mini) * 2);
+	--padding-large: calc(var(--padding-mini) * 3);
+
+	/* 外边距 */
+	--margin-mini: 30upx;
+	--margin-medium: calc(var(--margin-mini) * 2);
+	--margin-large: calc(var(--margin-mini) * 3);
+
+	/*  阴影*/
+	--shadow-border: 0px 1px 0px 0px rgba(0, 0, 0, 0.09);
+	--shadow-item: 0px 1px 8px 0px rgba(64, 64, 64, 0.11);
+
+	/* 过渡 */
+
+	--transition-all: all 0.2s ease 0s;
+	/* 透明度 */
+	--opacity: 0.6;
+
+	/* 遮罩层背景 */
+	--mask-bg: rgba(0, 0, 0, 0.6);
+
+	/* 渐变 */
+	--linear-main: linear-gradient(red, blue);
+	--radial-main: radial-gradient(red);
+
+	/* 层级 */
+	--index: 10;
+	--index10: var(--index);
+	--index20: calc(var(--index) * 2);
+	--index30: calc(var(--index) * 3);
+	--index40: calc(var(--index) * 4);
+	--index50: calc(var(--index) * 5);
+	--index60: calc(var(--index) * 6);
+	--index70: calc(var(--index) * 7);
+	--index80: calc(var(--index) * 8);
+	--index90: calc(var(--index) * 9);
+	--index100: calc(var(--index) * 10);
+	--index-second-highest: 999990;
+	/*比最高第一层*/
+	--index-highest: 999999;
+	/*最高*/
+
+
+	/* 栅格布局 */
+	--col: calc(100% / 24);
+
+	/* 状态 */
+	/* 	--type-primary: #2979ff;
+		--type-primary-light: #ecf5ff;
+		--type-primary-disabled: #a0cfff;
+		--type-primary-dark: #2b85e4;
+	
+		--type-warning: #ff9900;
+		--type-warning-disabled: #fcbd71;
+		--type-warning-dark: #f29100;
+		--type-warning-light: #fdf6ec;
+	
+		--type-success: #19be6b;
+		--type-success-disabled: #71d5a1;
+		--type-success-dark: #18b566;
+		--type-success-light: #dbf1e1;
+	
+		--type-error: #fa3534;
+		--type-error-disabled: #fab6b6;
+		--type-error-dark: #dd6161;
+		--type-error-light: #fef0f0;
+	
+		--type-info: #909399;
+		--type-info-disabled: #c8c9cc;
+		--type-info-dark: #82848a;
+		--type-info-light: #f4f4f5; */
+
+
+	/* 鼠标悬浮 */
+	--active-color: var(--color-theme);
+	--active-bg: var(--bg-wihte);
+}
+
+/* 按钮 */
+.btn {
+	--btn-bg: var(--color-theme);
+	--btn-shadow: 0 2upx 2upx 0upx var(--color-theme);
+	--btn-radius: var(--radius);
+}

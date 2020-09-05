@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="jquery-3.1.1.js"></script> -->
+    <title>Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .head {
+            line-height: 40px;
+            background-color: green;
+            color: white;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <form action="/updated" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="tt" type="file">
+            <input type="submit" value="提交">
+        </form>
+        <div>{{aa}}</div>
+    </div>
+
+    <script src="./static/script/vue.min.js"></script>
+    <script src="./static/script/jquery-3.1.1.min.js"></script>
+
+    <script>
+
+        var vue = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    aa: '44444'
+                }
+            },
+            mounted() {
+                console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+                this.getData();
+            },
+            methods: {
+                getCookie(name) {
+                    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+                    return r ? r[1] : undefined;
+                },
+                getData() {
+                    $.ajax({
+                        url: '/getdata',
+                        type: "POST",
+                        headers: {
+                            "X-CSRFToken": this.getCookie("csrftoken")
+                        },
+                        data: {
+                            type: 1,
+                            aa: 2
+                        },
+                        success: (res) => {
+                            console.log(res, ')))))))))))))))))))');
+                        },
+
+                    })
+                }
+            },
+
+        })
+
+    </script>
+</body>
+
+</html>

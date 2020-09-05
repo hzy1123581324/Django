@@ -37,7 +37,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^static/(?P<path>.*)$', static.serve,
       {'document_root': settings.STATIC_ROOT}, name='static'),
-
+	  
+	  
+	
+	re_path('^storeadmin',include('storeadmin.urls')),
     path('', views.index),
     path('index/', views.index),
     re_path('^page/.html$',web_views.index),

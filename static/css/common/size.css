@@ -1,0 +1,227 @@
+/*充满整个父容器*/
+.full{width:100%!important;height:100%!important}
+/*长宽比1比1*/
+.size20{width:20upx!important;height:20upx!important}
+.size22{width:22upx!important;height:22upx!important}
+.size24{width:24upx!important;height:24upx!important}
+.size26{width:26upx!important;height:26upx!important}
+.size28{width:28upx!important;height:28upx!important}
+.size30{width:30upx!important;height:30upx!important}
+.size32{width:32upx!important;height:32upx!important}
+.size34{width:34upx!important;height:34upx!important}
+.size36{width:36upx!important;height:36upx!important}
+.size38{width:38upx!important;height:38upx!important}
+.size40{width:40upx!important;height:40upx!important}
+.size42{width:42upx!important;height:42upx!important}
+.size44{width:44upx!important;height:44upx!important}
+.size46{width:46upx!important;height:46upx!important}
+.size48{width:48upx!important;height:48upx!important}
+.size50{width:50upx!important;height:50upx!important}
+.size52{width:52upx!important;height:52upx!important}
+.size54{width:54upx!important;height:54upx!important}
+.size56{width:56upx!important;height:56upx!important}
+.size58{width:58upx!important;height:58upx!important}
+.size60{width:60upx!important;height:60upx!important}
+.size62{width:62upx!important;height:62upx!important}
+.size64{width:64upx!important;height:64upx!important}
+.size66{width:66upx!important;height:66upx!important}
+.size68{width:68upx!important;height:68upx!important}
+.size70{width:70upx!important;height:70upx!important}
+.size72{width:72upx!important;height:72upx!important}
+.size74{width:74upx!important;height:74upx!important}
+.size76{width:76upx!important;height:76upx!important}
+.size78{width:78upx!important;height:78upx!important}
+.size80{width:80upx!important;height:80upx!important}
+.size82{width:82upx!important;height:82upx!important}
+.size84{width:84upx!important;height:84upx!important}
+.size86{width:86upx!important;height:86upx!important}
+.size88{width:88upx!important;height:88upx!important}
+.size90{width:90upx!important;height:90upx!important}
+.size92{width:92upx!important;height:92upx!important}
+.size94{width:94upx!important;height:94upx!important}
+.size96{width:96upx!important;height:96upx!important}
+.size98{width:98upx!important;height:98upx!important}
+.size100{width:100upx!important;height:100upx!important}
+
+.size110{width:110upx!important;height:110upx!important}
+.size120{width:120upx!important;height:120upx!important}
+.size128{width:128upx!important;height:128upx!important}
+.size130{width:130upx!important;height:130upx!important}
+.size152{width:152upx;height:152upx;}
+.size156{width:156upx;height:156upx;}
+.size160{width: 160upx;height:160upx;}
+.size172{width:172upx;height:172upx;}
+.size200{width:200upx;height:200upx;}
+.size270{width:270upx;height:270upx;}
+.size371{width:371upx;height:371upx;}
+/* *********************************************高度百分比*****我是分割线********************************************** */
+.h_100{height:100% !important}
+.h_92{height:92%}
+.h_84{height:84%}
+.h_50{height:50%}/*两列*/
+.h_33{height:33.3333%}/*3列*/
+.h_25{height:25%}/*4列*/	
+.h_20{height:20%}/*5列*/
+	
+/* *********************************************实际高度******我是分割线********************************************** */
+.h30{height:30upx!important}
+.h32{height:32upx!important}
+.h34{height:34upx!important}
+.h36{height:36upx!important}
+.h38{height:38upx!important}
+.h40{height:40upx!important}
+.h42{height:42upx!important}
+.h44{height:44upx!important}
+.h46{height:46upx!important}
+.h48{height:48upx!important}
+.h50{height:50upx!important}
+.h52{height:52upx!important}
+.h54{height:54upx!important}
+.h56{height:56upx!important}
+.h58{height:58upx!important}
+.h60{height:60upx!important}
+.h62{height:62upx!important}
+.h64{height:64upx!important}
+.h66{height:66upx!important}
+.h68{height:68upx!important}
+.h70{height:70upx!important}
+.h72{height:72upx!important}
+.h74{height:74upx!important}
+.h76{height:76upx!important}
+.h78{height:78upx!important}
+.h80{height:80upx!important}
+.h82{height:82upx!important}
+.h84{height:84upx!important}
+.h86{height:86upx!important}
+.h88{height:88upx!important}
+.h90{height:90upx!important}
+.h92{height:92upx!important}
+.h94{height:94upx!important}
+.h96{height:96upx!important}
+.h98{height:98upx!important}
+.h100{height:100upx!important}
+
+.h104{height:104upx}
+.h112{height:112upx}
+.h128{height:128upx}
+.h132{height:132upx}
+.h164{height:164upx}
+.h266{height:266upx}
+.h288{height:288upx}
+.h316{height: 316upx}
+.h192{height:242upx!important}
+/* *********************************************最小高度*****我是分割线********************************************** */
+.min_h30{min-height:30upx!important}
+.min_h32{min-height:32upx!important}
+.min_h34{min-height:34upx!important}
+.min_h36{min-height:36upx!important}
+.min_h38{min-height:38upx!important}
+.min_h40{min-height:40upx!important}
+.min_h42{min-height:42upx!important}
+.min_h44{min-height:44upx!important}
+.min_h46{min-height:46upx!important}
+.min_h48{min-height:48upx!important}
+.min_h50{min-height:50upx!important}
+.min_h52{min-height:52upx!important}
+.min_h54{min-height:54upx!important}
+.min_h56{min-height:56upx!important}
+.min_h58{min-height:58upx!important}
+.min_h60{min-height:60upx!important}
+.min_h62{min-height:62upx!important}
+.min_h64{min-height:64upx!important}
+.min_h66{min-height:66upx!important}
+.min_h68{min-height:68upx!important}
+.min_h70{min-height:70upx!important}
+.min_h72{min-height:72upx!important}
+.min_h74{min-height:74upx!important}
+.min_h76{min-height:76upx!important}
+.min_h78{min-height:78upx!important}
+.min_h80{min-height:80upx!important}
+.min_h82{min-height:82upx!important}
+.min_h84{min-height:84upx!important}
+.min_h86{min-height:86upx!important}
+.min_h88{min-height:88upx!important}
+.min_h90{min-height:90upx!important}
+.min_h92{min-height:92upx!important}
+.min_h94{min-height:94upx!important}
+.min_h96{min-height:96upx!important}
+.min_h98{min-height:98upx!important}
+.min_h100{min-height:100upx!important}
+/* *********************************************我是分割线********************************************** */
+.max_h30{max-height:30upx!important}
+.max_h32{max-height:32upx!important}
+.max_h34{max-height:34upx!important}
+.max_h36{max-height:36upx!important}
+.max_h38{max-height:38upx!important}
+.max_h40{max-height:40upx!important}
+.max_h42{max-height:42upx!important}
+.max_h44{max-height:44upx!important}
+.max_h46{max-height:46upx!important}
+.max_h48{max-height:48upx!important}
+.max_h50{max-height:50upx!important}
+.max_h52{max-height:52upx!important}
+.max_h54{max-height:54upx!important}
+.max_h56{max-height:56upx!important}
+.max_h58{max-height:58upx!important}
+.max_h60{max-height:60upx!important}
+.max_h62{max-height:62upx!important}
+.max_h64{max-height:64upx!important}
+.max_h66{max-height:66upx!important}
+.max_h68{max-height:68upx!important}
+.max_h70{max-height:70upx!important}
+.max_h72{max-height:72upx!important}
+.max_h74{max-height:74upx!important}
+.max_h76{max-height:76upx!important}
+.max_h78{max-height:78upx!important}
+.max_h80{max-height:80upx!important}
+.max_h82{max-height:82upx!important}
+.max_h84{max-height:84upx!important}
+.max_h86{max-height:86upx!important}
+.max_h88{max-height:88upx!important}
+.max_h90{max-height:90upx!important}
+.max_h92{max-height:92upx!important}
+.max_h94{max-height:94upx!important}
+.max_h96{max-height:96upx!important}
+.max_h98{max-height:98upx!important}
+.max_h100{max-height:100upx!important}
+/* *********************************************宽度百分比***我是分割线********************************************** */
+.w_100 {width: 100% !important}
+.w_92 {width: 92% !important;margin-left:auto;margin-right:auto}/*两倍图690*/
+.w_84 {width: 84%;display: inline-block;margin-left:auto;margin-right:auto}/*两倍图630*/
+.w_50 {width: 50%!important}/*两列*/
+.w_33{width:33.3333% !important}/*3列*/
+.w_25{width:25%!important}/*4列*/
+.w_20{width:20%  !important}/*5列*/
+
+/* *********************************************我是分割线********************************************** */
+.w100{width:100upx!important}
+.w110{width:110upx!important}
+.w120{width:120upx!important}
+.w130{width:130upx!important}
+.w140{width:140upx!important}
+.w150{width:150upx!important}
+.w152{width:152upx;}
+.w156{width:156upx;}
+.w160{width:160upx!important}
+.w168{width:168upx;}
+.w170{width:170upx!important}
+.w180{width:180upx!important}
+.w190{width:190upx!important}
+.w200{width:200upx!important}
+.w210{width:210upx!important}
+
+.w216{width: 216upx;}
+
+.w220{width: 220upx;}
+
+.w280{width: 280upx;}
+
+.w371{width:371upx;}
+
+.w450{width: 450upx;}
+
+.w520{width: 520upx;}
+
+.w558{width: 558upx;}
+
+/* *********************************************我是分割线********************************************** */

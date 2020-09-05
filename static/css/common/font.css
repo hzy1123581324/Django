@@ -1,0 +1,201 @@
+/*字体设置*/
+/********************字体大小**********************/
+.fs1n{
+	font-size: 1em;
+}
+.fs2n{
+	font-size: 2em;
+}
+/*字体自适应大小*/
+.fs10{font-size:10upx!important}
+.fs12{font-size:12upx!important}
+.fs14{font-size:14upx!important}
+.fs16{font-size:16upx!important}
+.fs18{font-size:18upx!important}
+.fs20{font-size:20upx!important}
+.fs22{font-size:22upx!important}
+.fs24{font-size:24upx!important}
+.fs26{font-size:26upx!important}
+.fs28{font-size:28upx!important}
+.fs30{font-size:30upx!important}
+.fs32{font-size:32upx!important}
+.fs34{font-size:34upx!important}
+.fs36{font-size:36upx!important}
+.fs38{font-size:38upx!important}
+.fs40{font-size:40upx!important}
+.fs42{font-size:42upx!important}
+.fs44{font-size:44upx!important}
+.fs46{font-size:46upx!important}
+.fs48{font-size:48upx!important}
+.fs50{font-size:50upx!important}
+.fs52{font-size:52upx!important}
+.fs54{font-size:54upx!important}
+.fs56{font-size:56upx!important}
+.fs58{font-size:58upx!important}
+.fs60{font-size:60upx!important}
+.fs62{font-size:62upx!important}
+.fs64{font-size:64upx!important}
+.fs66{font-size:66upx!important}
+.fs68{font-size:68upx!important}
+.fs70{font-size:70upx!important}
+.fs72{font-size:72upx!important}
+.fs74{font-size:74upx!important}
+.fs76{font-size:76upx!important}
+.fs78{font-size:78upx!important}
+.fs80{font-size:80upx!important}
+
+/*下划线，删除线，上划线*/
+.f_del{
+	text-decoration: line-through;
+}
+.f_under{
+	text-decoration: underline;
+}
+/***********字体排版*******************/
+.txt_c {
+	text-align: center !important;
+}
+.txt_lf {
+	text-align: left !important;
+}
+.txt_rg {
+	text-align: right !important;
+}
+.f_b{
+	font-weight: 600;
+}
+.f_b300{
+	font-weight: 300;
+}
+.f_b400{
+	font-weight: 400;
+}
+.f_b500{
+	font-weight: 500;
+}
+.f_b600{
+	font-weight: 600;
+}
+.f_b700{
+	font-weight: 700;
+}
+.f_b800{
+	font-weight: 800;
+}
+
+/*缩进*/
+.f_indent_1{/*缩进一字*/
+	text-indent: 1em;
+}
+.f_indent{/*缩进两字*/
+	text-indent:2em;
+}
+.f_indent_3{/*缩进3字*/
+	text-indent: 3em
+}
+/*强制不换行* 父类*/
+.f_nowrap{
+	white-space : nowrap;
+}
+.f_wrap{
+	word-wrap:break-word;
+	word-break:break-all,/* 强制英文单词断行  */
+}
+.ellipsis{
+	/*单行文本溢出*/
+  overflow: hidden;
+  text-overflow:ellipsis;/*文本溢出显示省略号*/
+  white-space:nowrap;/*文本不会换行（单行文本溢出）*/
+}
+/* white-space: normal|pre|nowrap|pre-wrap|pre-line|inherit;
+white-space 属性设置如何处理元素内的空白
+normal 默认。空白会被浏览器忽略。
+pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。
+nowrap 文本不会换行，文本会在在同一行上继续，直到遇到 br 标签为止。
+pre-wrap 保留空白符序列，但是正常地进行换行。
+pre-line 合并空白符序列，但是保留换行符。
+inherit 规定应该从父元素继承 white-space 属性的值。
+
+word-wrap: normal|break-word;
+word-wrap 属性用来标明是否允许浏览器在单词内进行断句，这是为了防止当一个字符串太长而找不到它的自然断句点时产生溢出现象。
+normal: 只在允许的断字点换行(浏览器保持默认处理)
+break-word:在长单词或URL地址内部进行换行
+word-break: normal|break-all|keep-all;
+
+word-break 属性用来标明怎么样进行单词内的断句。
+normal：使用浏览器默认的换行规则。
+break-all:允许再单词内换行
+keep-all:只能在半角空格或连字符处换行 */
+/*************限制行数**************/
+.txt_line{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+/************显示两行*****************/
+.txt_line2{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+/************显示三行*****************/
+.txt_line3{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
+
+/********************字体大小**********************/
+
+
+/*行高*/
+.lh1n{
+	line-height:1!important;
+}
+.lh1n5 {
+	line-height: 1.5 !important;
+}
+.lh2n {
+	line-height: 1.8 !important;
+}
+.lh22{line-height:22upx !important;}
+.lh24{line-height:24upx !important;}
+.lh26{line-height:26upx !important;}
+.lh28{line-height:28upx !important;}
+.lh30{line-height:30upx !important;}
+.lh32{line-height:32upx !important;}
+.lh34{line-height:34upx !important;}
+.lh36{line-height:36upx !important;}
+.lh38{line-height:38upx !important;}
+.lh40{line-height:40upx !important;}
+.lh42{line-height:42upx !important;}
+.lh44{line-height:44upx !important;}
+.lh46{line-height:46upx !important;}
+.lh48{line-height:48upx !important;}
+.lh50{line-height:50upx !important;}
+.lh52{line-height:52upx !important;}
+.lh54{line-height:54upx !important;}
+.lh56{line-height:56upx !important;}
+.lh58{line-height:58upx !important;}
+.lh60{line-height:60upx !important;}
+.lh62{line-height:62upx !important;}
+.lh64{line-height:64upx !important;}
+.lh68{line-height:68upx !important;}
+.lh70{line-height:70upx !important;}
+.lh72{line-height:72upx !important;}
+.lh74{line-height:74upx !important;}
+.lh76{line-height:76upx !important;}
+.lh78{line-height:78upx !important;}
+.lh80{line-height:80upx !important;}
+.lh82{line-height:82upx !important;}
+.lh84{line-height:84upx !important;}
+.lh86{line-height:86upx !important;}
+.lh88{line-height:88upx !important;}
+.lh90{line-height:90upx !important;}
+

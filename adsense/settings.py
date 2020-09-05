@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+	'storeadmin',
     'web',
 ]
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'adsense.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),os.path.join(BASE_DIR, 'storeadmin/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,6 +86,17 @@ DATABASES = {
         # },
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', # 数据库引擎
+#         'NAME': 'django_mysql', # 数据库名
+#         'USER': 'root', # 账号
+#         'PASSWORD': 'root', # 密码
+#         'HOST': '127.0.0.1', # HOST
+#         'POST': 3306, # 端口
+
+#     }
+# }
 
 
 # Password validation
@@ -135,6 +147,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'static' ## 新增行
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static' if DEBUG else '/static/'),
+	os.path.join(BASE_DIR,'storeadmin/static' if DEBUG else '/storeadmin/static/'),
     # 如果DEBUG为true执行static否则执行/static/
 )
 

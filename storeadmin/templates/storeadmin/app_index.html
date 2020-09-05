@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+
+{% block mounted %}
+	this.datatest();
+{% endblock %}
+{% block methods %}
+	datatest(){
+		console.log('77777777777777777')
+		let a = 55;
+		let b = 44;
+		console.log({a,b})
+	},
+{% endblock %}

@@ -1,0 +1,179 @@
+/*v1.0*/
+@charset "UTF-8";
+@import "common/animate.css";
+@import "common/grid.css";/*栅格布局*/
+@import "common/size.css";/*尺寸*/
+@import "common/flex.css";/*弹性布局*/
+@import "common/font.css";/*字体设置*/
+@import "common/margin.css";/*外边距*/
+@import "common/padding.css";/*内边距*/
+@import "common/color.css";/*背景颜色/字体颜色/边框颜色*/
+@import "common/box.css";/*盒模型*/
+@import "common/trans.css";/*动画/过渡/转换*/
+/* @import "common/icon.css";/*图标 */ 
+@import "common/position.css";/*定位*/
+/* @import "common/component.css";/*组件样式*/ 
+/* @import "./font-awesome.css"; /*引入图标字体*/ 
+@import "./scenes/main.css"; /*场景样式*/
+@import "./theme/common.css";/*默认主题*/
+@import  "./theme/white.css";
+@import  "./theme/black.css";
+page{
+	height: auto;
+	min-height: 100%;
+	font-size: 28upx;
+	color:#333;
+	/* background:#f1f1f1; */
+	box-sizing: border-box;
+	line-height: 1;
+	position: relative;
+  }
+  view, image, text, button, input, textarea, image,scroll-view,span {
+	/**/
+	padding: 0;
+	margin: 0;
+	-webkit-margin-before: 0em; /*css3新增*/
+	-webkit-margin-after: 0em; /*css3新增*/
+	-webkit-margin-start: 0upx; /*css3新增*/
+	-webkit-margin-end: 0upx; /*css3新增*/
+	text-decoration: none;
+	border: 0;
+	list-style: none;
+	box-sizing: border-box;
+	outline: 0;
+	font-weight: inherit;
+	position: inherit;
+	font-style: normal;
+	vertical-align: bottom;
+	/* line-height: 1; */
+  }
+textarea{/*去掉右下三角*/
+	resize:none;
+}
+
+input{
+	background-color: transparent;
+	font-size: inherit
+}
+/*常用*/
+.hide {
+	display: none !important;
+}
+.scrollBox{
+	overflow: auto;
+}
+.opacity{
+	opacity: 0;
+}
+.rg {
+	float: right !important;
+}
+.lf {
+	float: left !important;
+}
+
+.clear::after, .clear::before {
+	content: '';
+	display: table;
+	clear: both;
+}
+.overflow_auto{
+	overflow: auto;
+}
+.overflow_scroll{
+	overflow: scroll;
+}
+/*背景颜色*/
+.body_bg{
+	background-color:#f6f5fa;
+}
+.bg_f55{
+	background-color:#f55;
+}
+.bor_main{
+	border-color: #509664;
+}
+.bg_main{
+	background-color: var(--color-theme);
+}
+.color_main{
+	color: var(--color-theme);
+}
+
+
+.red{
+	color: #b34545;
+}
+.color_f55{
+	color:#f55;
+}
+.bg_modal{
+	background-color:  rgba(0,0,0,.3);
+}
+
+/* ************************订单状态码颜色************************************ */
+.status0{
+	color: #b74f4f
+}
+.status2{
+	color: #cd3c3c
+}
+.status6{
+	color: #b3b3b3
+}
+.status7{
+	color: #f0bd26
+}
+
+
+
+.codeBox {
+	font-size: 24upx;
+	height: 100%;
+	display: -webkit-box;
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	margin-left: 20upx;
+}
+/******获取验证码*********/
+.code {
+	width: 28.8vw;
+	height: 100%;
+	position: relative;
+}
+.code::before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 60%;
+	background-color: #d7d7d7;
+	left: 0;
+	top: 20%;
+}
+/****表单控件****/
+.btn{
+	width:92%;
+	border-radius: 5px;
+	line-height: 44px;
+	text-align: center;
+}
+
+
+.mask{
+	background-color: rgba(51, 51, 51, .4);
+}
+
+
+/*阴影*/
+.shadow {
+	box-shadow: 0 0 3px 0px rgba(14,14,14,0.2);
+}
+
+/* .bg_tab {
+	background-image: -webkit-linear-gradient(to left,#1ab4de 0,#15b9ba 64%, #0fbe95 100%);
+	background-image: linear-gradient(to left,#1ab4de 0,#15b9ba 64%, #0fbe95 100%);
+} */
+
+
+/*sg*/

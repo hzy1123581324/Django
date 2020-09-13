@@ -7,42 +7,42 @@
 	font-size: 2em;
 }
 /*字体自适应大小*/
-.fs10{font-size:10upx!important}
-.fs12{font-size:12upx!important}
-.fs14{font-size:14upx!important}
-.fs16{font-size:16upx!important}
-.fs18{font-size:18upx!important}
-.fs20{font-size:20upx!important}
-.fs22{font-size:22upx!important}
-.fs24{font-size:24upx!important}
-.fs26{font-size:26upx!important}
-.fs28{font-size:28upx!important}
-.fs30{font-size:30upx!important}
-.fs32{font-size:32upx!important}
-.fs34{font-size:34upx!important}
-.fs36{font-size:36upx!important}
-.fs38{font-size:38upx!important}
-.fs40{font-size:40upx!important}
-.fs42{font-size:42upx!important}
-.fs44{font-size:44upx!important}
-.fs46{font-size:46upx!important}
-.fs48{font-size:48upx!important}
-.fs50{font-size:50upx!important}
-.fs52{font-size:52upx!important}
-.fs54{font-size:54upx!important}
-.fs56{font-size:56upx!important}
-.fs58{font-size:58upx!important}
-.fs60{font-size:60upx!important}
-.fs62{font-size:62upx!important}
-.fs64{font-size:64upx!important}
-.fs66{font-size:66upx!important}
-.fs68{font-size:68upx!important}
-.fs70{font-size:70upx!important}
-.fs72{font-size:72upx!important}
-.fs74{font-size:74upx!important}
-.fs76{font-size:76upx!important}
-.fs78{font-size:78upx!important}
-.fs80{font-size:80upx!important}
+.fs10{font-size:10px;}
+.fs12{font-size:12px;}
+.fs14,html{font-size:14px;}
+.fs16{font-size:16px;}
+.fs18{font-size:18px;}
+.fs20{font-size:20px;}
+.fs22{font-size:22px;}
+.fs24{font-size:24px;}
+.fs26{font-size:26px;}
+.fs28{font-size:28px}
+.fs30{font-size:30px;}
+.fs32{font-size:32px;}
+.fs34{font-size:34px;}
+.fs36{font-size:36px;}
+.fs38{font-size:38px;}
+.fs40{font-size:40px;}
+.fs42{font-size:42px;}
+.fs44{font-size:44px;}
+.fs46{font-size:46px;}
+.fs48{font-size:48px;}
+.fs50{font-size:50px;}
+.fs52{font-size:52px;}
+.fs54{font-size:54px;}
+.fs56{font-size:56px;}
+.fs58{font-size:58px;}
+.fs60{font-size:60px;}
+.fs62{font-size:62px;}
+.fs64{font-size:64px;}
+.fs66{font-size:66px;}
+.fs68{font-size:68px;}
+.fs70{font-size:70px;}
+.fs72{font-size:72px;}
+.fs74{font-size:74px;}
+.fs76{font-size:76px;}
+.fs78{font-size:78px;}
+.fs80{font-size:80px;}
 
 /*下划线，删除线，上划线*/
 .f_del{
@@ -50,6 +50,12 @@
 }
 .f_under{
 	text-decoration: underline;
+}
+/*下划线是虚线*/
+.f_under_dashed{
+
+	text-decoration: underline;
+	text-decoration-style: dashed;
 }
 /***********字体排版*******************/
 .txt_c {
@@ -64,25 +70,6 @@
 .f_b{
 	font-weight: 600;
 }
-.f_b300{
-	font-weight: 300;
-}
-.f_b400{
-	font-weight: 400;
-}
-.f_b500{
-	font-weight: 500;
-}
-.f_b600{
-	font-weight: 600;
-}
-.f_b700{
-	font-weight: 700;
-}
-.f_b800{
-	font-weight: 800;
-}
-
 /*缩进*/
 .f_indent_1{/*缩进一字*/
 	text-indent: 1em;
@@ -127,7 +114,7 @@ normal：使用浏览器默认的换行规则。
 break-all:允许再单词内换行
 keep-all:只能在半角空格或连字符处换行 */
 /*************限制行数**************/
-.txt_line{
+[class*='txt_line']{
 	overflow : hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
@@ -136,18 +123,10 @@ keep-all:只能在半角空格或连字符处换行 */
 }
 /************显示两行*****************/
 .txt_line2{
-	overflow : hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 }
 /************显示三行*****************/
 .txt_line3{
-	overflow : hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 }
 
@@ -155,47 +134,533 @@ keep-all:只能在半角空格或连字符处换行 */
 
 
 /*行高*/
-.lh1n{
+.l_h_1,.lh_1{
 	line-height:1!important;
 }
-.lh1n5 {
-	line-height: 1.5 !important;
-}
-.lh2n {
+.l_h_2,.lh_2 {
 	line-height: 1.8 !important;
 }
-.lh22{line-height:22upx !important;}
-.lh24{line-height:24upx !important;}
-.lh26{line-height:26upx !important;}
-.lh28{line-height:28upx !important;}
-.lh30{line-height:30upx !important;}
-.lh32{line-height:32upx !important;}
-.lh34{line-height:34upx !important;}
-.lh36{line-height:36upx !important;}
-.lh38{line-height:38upx !important;}
-.lh40{line-height:40upx !important;}
-.lh42{line-height:42upx !important;}
-.lh44{line-height:44upx !important;}
-.lh46{line-height:46upx !important;}
-.lh48{line-height:48upx !important;}
-.lh50{line-height:50upx !important;}
-.lh52{line-height:52upx !important;}
-.lh54{line-height:54upx !important;}
-.lh56{line-height:56upx !important;}
-.lh58{line-height:58upx !important;}
-.lh60{line-height:60upx !important;}
-.lh62{line-height:62upx !important;}
-.lh64{line-height:64upx !important;}
-.lh68{line-height:68upx !important;}
-.lh70{line-height:70upx !important;}
-.lh72{line-height:72upx !important;}
-.lh74{line-height:74upx !important;}
-.lh76{line-height:76upx !important;}
-.lh78{line-height:78upx !important;}
-.lh80{line-height:80upx !important;}
-.lh82{line-height:82upx !important;}
-.lh84{line-height:84upx !important;}
-.lh86{line-height:86upx !important;}
-.lh88{line-height:88upx !important;}
-.lh90{line-height:90upx !important;}
+.l_h_15,.lh1-5 {
+	line-height: 1.5 !important;
+}
+.lh30{line-height:30px;}
+.lh32{line-height:32px;}
+.lh34{line-height:34px;}
+.lh36{line-height:36px;}
+.lh38{line-height:38px;}
+.lh40{line-height:40px;}
+.lh42{line-height:42px;}
+.lh44{line-height:44px;}
+.lh46{line-height:46px;}
+.lh48{line-height:48px;}
+.lh50{line-height:50px;}
+.lh52{line-height:52px;}
+.lh54{line-height:54px;}
+.lh56{line-height:56px;}
+.lh58{line-height:58px;}
+.lh60{line-height:60px;}
+.lh62{line-height:62px;}
+.lh64{line-height:64px;}
+.lh66{line-height:66px;}
+.lh68{line-height:68px;}
+.lh70{line-height:70px;}
+.lh72{line-height:72px;}
+.lh74{line-height:74px;}
+.lh76{line-height:76px;}
+.lh78{line-height:78px;}
+.lh80{line-height:80px;}
+.lh82{line-height:82px;}
+.lh84{line-height:84px;}
+.lh86{line-height:86px;}
+.lh88{line-height:88px;}
+.lh90{line-height:90px;}
+.lh92{line-height:92px;}
+.lh94{line-height:94px;}
+.lh96{line-height:96px;}
+.lh98{line-height:98px;}
+.lh100{line-height:100px;}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:768px) {
+	/* 两倍图 适用于栅格布局*/
+	/* h1{font-size:3.2vw}
+	h2{font-size:4vw}
+	h3{font-size:4.8vw}
+	h4{font-size:5.6vw}
+	h5{font-size:6.4vw}
+	h6{font-size:7.2vw} */
+	/*字体自适应大小*/
+	.fs-xs-10{font-size:1.3333vw}
+	.fs-xs-12{font-size:1.6vw}
+	.fs-xs-14{font-size:1.866667vw}
+	.fs-xs-16{font-size:2.13333vw}
+	.fs-xs-18{font-size:2.4vw}
+	.fs-xs-20{font-size:2.66667vw}
+	.fs-xs-22{font-size:2.93333vw}
+	.fs-xs-24{font-size:3.2vw}
+	.fs-xs-26{font-size:3.466667vw}
+	.fs-xs-28,html{font-size:3.73333vw}
+	.fs-xs-30{font-size:4vw}
+	.fs-xs-32{font-size:4.266667vw}
+	.fs-xs-34{font-size:4.533333vw}
+	.fs-xs-36{font-size:4.8vw}
+	.fs-xs-38{font-size:5.066667vw}
+	.fs-xs-40{font-size:5.33333vw}
+	.fs-xs-42{font-size:5.6vw}
+	.fs-xs-44{font-size:5.866667vw}
+	.fs-xs-46{font-size:6.13333vw}
+	.fs-xs-48{font-size:6.4vw}
+	.fs-xs-50{font-size:6.66667vw}
+	.fs-xs-52{font-size:6.933333vw}
+	.fs-xs-54{font-size:7.2vw}
+	.fs-xs-56{font-size:7.4666667vw}
+	.fs-xs-58{font-size:7.73333333vw}
+	.fs-xs-60{font-size:8vw}
+	.fs-xs-62{font-size:8.266667vw}
+	.fs-xs-64{font-size:8.533333vw}
+	.fs-xs-66{font-size:8.8vw}
+	.fs-xs-68{font-size:9.066667vw}
+	.fs-xs-70{font-size:9.333333vw}
+	.fs-xs-72{font-size:9.6vw}
+	.fs-xs-74{font-size:9.866666vw}
+	.fs-xs-76{font-size:10.1333333vw}
+	.fs-xs-78{font-size:10.4vw}
+	.fs-xs-80{font-size:10.66666667vw}
+
+	.lh-xs-30{line-height:4vw}
+	.lh-xs-32{line-height:4.266667vw}
+	.lh-xs-34{line-height:4.5333333vw}
+	.lh-xs-36{line-height:4.8vw}
+	.lh-xs-38{line-height:5.066667vw}
+	.lh-xs-40{line-height:5.33333vw}
+	.lh-xs-42{line-height:5.6vw}
+	.lh-xs-44{line-height:5.8666667vw}
+	.lh-xs-46{line-height:6.133333vw}
+	.lh-xs-48{line-height:6.4vw}
+	.lh-xs-50{line-height:6.666667vw}
+	.lh-xs-52{line-height:6.9333333vw}
+	.lh-xs-54{line-height:7.2vw}
+	.lh-xs-56{line-height:7.4666667vw}
+	.lh-xs-58{line-height:7.7333333vw}
+	.lh-xs-60{line-height:8vw}
+	.lh-xs-62{line-height:8.266667vw}
+	.lh-xs-64{line-height:8.53333vw}
+	.lh-xs-66{line-height:8.8vw}
+	.lh-xs-68{line-height:9.066667vw}
+	.lh-xs-70{line-height:9.333333vw}
+	.lh-xs-72{line-height:9.6vw}
+	.lh-xs-74{line-height:9.866667vw}
+	.lh-xs-76{line-height:10.13333vw}
+	.lh-xs-78{line-height:10.4vw}
+	.lh-xs-80{line-height:10.66667vw}
+	.lh-xs-82{line-height:10.93333vw}
+	.lh-xs-84{line-height:11.2vw}
+	.lh-xs-86{line-height:11.46667vw}
+	.lh-xs-88{line-height:11.733333vw}
+	.lh-xs-90{line-height:12vw}
+	.lh-xs-92{line-height:12.266667vw}
+	.lh-xs-94{line-height:12.5333vw}
+	.lh-xs-96{line-height:12.8vw}
+	.lh-xs-98{line-height:13.06667vw}
+	.lh-xs-100{line-height:13.3333vw}
+}
+
+@media only screen and (min-width:768px) {
+	/* h1{font-size:12px}
+	h2{font-size:15px}
+	h3{font-size:18px}
+	h4{font-size:21px}
+	h5{font-size:24px}
+	h6{font-size:27px} */
+	/*字体自适应大小*/
+	/* 一倍图 */
+	.fs-sm-12{font-size:12px}
+	.fs-sm-13{font-size:13px}
+	.fs-sm-14,html{font-size:14px}
+	.fs-sm-15{font-size:15px}
+	.fs-sm-16{font-size:16px}
+	.fs-sm-17{font-size:17px}
+	.fs-sm-18{font-size:18px}
+	.fs-sm-19{font-size:19px}
+	.fs-sm-20{font-size:20px}
+	.fs-sm-21{font-size:21px}
+	.fs-sm-22{font-size:22px}
+	.fs-sm-23{font-size:23px}
+	.fs-sm-24{font-size:24px}
+	.fs-sm-25{font-size:25px}
+	.fs-sm-26{font-size:26px}
+	.fs-sm-27{font-size:27px}
+	.fs-sm-28{font-size:28px}
+	.fs-sm-29{font-size:29px}
+	.fs-sm-30{font-size:30px}
+	.fs-sm-31{font-size:31px}
+	.fs-sm-32{font-size:32px}
+	.fs-sm-33{font-size:33px}
+	.fs-sm-34{font-size:34px}
+	.fs-sm-35{font-size:35px}
+	.fs-sm-36{font-size:36px}
+	.fs-sm-37{font-size:37px}
+	.fs-sm-38{font-size:38px}
+	.fs-sm-39{font-size:39px}
+	.fs-sm-40{font-size:40px}
+	.fs-sm-41{font-size:41px}
+	.fs-sm-42{font-size:42px}
+	.fs-sm-43{font-size:43px}
+	.fs-sm-44{font-size:44px}
+	.fs-sm-45{font-size:45px}
+	.fs-sm-46{font-size:46px}
+	.fs-sm-47{font-size:47px}
+	.fs-sm-48{font-size:48px}
+	.fs-sm-49{font-size:49px}
+	.fs-sm-50{font-size:50px}
+	
+	.lh-xs-15{line-height:15px}
+	.lh-xs-16{line-height:16px}
+	.lh-xs-17{line-height:17px}
+	.lh-xs-18{line-height:18px}
+	.lh-xs-19{line-height:19px}
+	.lh-xs-20{line-height:20px}
+	.lh-xs-21{line-height:21px}
+	.lh-xs-22{line-height:22px}
+	.lh-xs-23{line-height:23px}
+	.lh-xs-24{line-height:24px}
+	.lh-xs-25{line-height:25px}
+	.lh-xs-26{line-height:26px}
+	.lh-xs-27{line-height:27px}
+	.lh-xs-28{line-height:28px}
+	.lh-xs-29{line-height:29px}
+	.lh-xs-30{line-height:30px}
+	.lh-xs-31{line-height:31px}
+	.lh-xs-32{line-height:32px}
+	.lh-xs-33{line-height:33px}
+	.lh-xs-34{line-height:34px}
+	.lh-xs-35{line-height:35px}
+	.lh-xs-36{line-height:36px}
+	.lh-xs-37{line-height:37px}
+	.lh-xs-38{line-height:38px}
+	.lh-xs-39{line-height:39px}
+	.lh-xs-40{line-height:40px}
+	.lh-xs-41{line-height:41px}
+	.lh-xs-42{line-height:42px}
+	.lh-xs-43{line-height:43px}
+	.lh-xs-44{line-height:44px}
+	.lh-xs-45{line-height:45px}
+	.lh-xs-46{line-height:46px}
+	.lh-xs-47{line-height:47px}
+	.lh-xs-48{line-height:48px}
+	.lh-xs-49{line-height:49px}
+	.lh-xs-50{line-height:50px}
+	.lh-xs-51{line-height:51px}
+	.lh-xs-52{line-height:52px}
+	.lh-xs-53{line-height:53px}
+	.lh-xs-54{line-height:54px}
+	.lh-xs-55{line-height:55px}
+	.lh-xs-56{line-height:56px}
+	.lh-xs-57{line-height:57px}
+	.lh-xs-58{line-height:58px}
+	.lh-xs-59{line-height:59px}
+	.lh-xs-60{line-height:60px}
+}
+
+@media only screen and (min-width:992px) {
+		/* 一倍图 */
+		.fs-md-12{font-size:12px}
+		.fs-md-13{font-size:13px}
+		.fs-md-14{font-size:14px}
+		.fs-md-15{font-size:15px}
+		.fs-md-16{font-size:16px}
+		.fs-md-17{font-size:17px}
+		.fs-md-18{font-size:18px}
+		.fs-md-19{font-size:19px}
+		.fs-md-20{font-size:20px}
+		.fs-md-21{font-size:21px}
+		.fs-md-22{font-size:22px}
+		.fs-md-23{font-size:23px}
+		.fs-md-24{font-size:24px}
+		.fs-md-25{font-size:25px}
+		.fs-md-26{font-size:26px}
+		.fs-md-27{font-size:27px}
+		.fs-md-28{font-size:28px}
+		.fs-md-29{font-size:29px}
+		.fs-md-30{font-size:30px}
+		.fs-md-31{font-size:31px}
+		.fs-md-32{font-size:32px}
+		.fs-md-33{font-size:33px}
+		.fs-md-34{font-size:34px}
+		.fs-md-35{font-size:35px}
+		.fs-md-36{font-size:36px}
+		.fs-md-37{font-size:37px}
+		.fs-md-38{font-size:38px}
+		.fs-md-39{font-size:39px}
+		.fs-md-40{font-size:40px}
+		.fs-md-41{font-size:41px}
+		.fs-md-42{font-size:42px}
+		.fs-md-43{font-size:43px}
+		.fs-md-44{font-size:44px}
+		.fs-md-45{font-size:45px}
+		.fs-md-46{font-size:46px}
+		.fs-md-47{font-size:47px}
+		.fs-md-48{font-size:48px}
+		.fs-md-49{font-size:49px}
+		.fs-md-50{font-size:50px}
+
+		.lh-md-15{line-height:15px}
+		.lh-md-16{line-height:16px}
+		.lh-md-17{line-height:17px}
+		.lh-md-18{line-height:18px}
+		.lh-md-19{line-height:19px}
+		.lh-md-20{line-height:20px}
+		.lh-md-21{line-height:21px}
+		.lh-md-22{line-height:22px}
+		.lh-md-23{line-height:23px}
+		.lh-md-24{line-height:24px}
+		.lh-md-25{line-height:25px}
+		.lh-md-26{line-height:26px}
+		.lh-md-27{line-height:27px}
+		.lh-md-28{line-height:28px}
+		.lh-md-29{line-height:29px}
+		.lh-md-30{line-height:30px}
+		.lh-md-31{line-height:31px}
+		.lh-md-32{line-height:32px}
+		.lh-md-33{line-height:33px}
+		.lh-md-34{line-height:34px}
+		.lh-md-35{line-height:35px}
+		.lh-md-36{line-height:36px}
+		.lh-md-37{line-height:37px}
+		.lh-md-38{line-height:38px}
+		.lh-md-39{line-height:39px}
+		.lh-md-40{line-height:40px}
+		.lh-md-41{line-height:41px}
+		.lh-md-42{line-height:42px}
+		.lh-md-43{line-height:43px}
+		.lh-md-44{line-height:44px}
+		.lh-md-45{line-height:45px}
+		.lh-md-46{line-height:46px}
+		.lh-md-47{line-height:47px}
+		.lh-md-48{line-height:48px}
+		.lh-md-49{line-height:49px}
+		.lh-md-50{line-height:50px}
+		.lh-md-51{line-height:51px}
+		.lh-md-52{line-height:52px}
+		.lh-md-53{line-height:53px}
+		.lh-md-54{line-height:54px}
+		.lh-md-55{line-height:55px}
+		.lh-md-56{line-height:56px}
+		.lh-md-57{line-height:57px}
+		.lh-md-58{line-height:58px}
+		.lh-md-59{line-height:59px}
+		.lh-md-60{line-height:60px}
+}
+
+@media only screen and (min-width:1200px) {
+
+	/* 一倍图 */
+	.fs-lg-12{font-size:12px}
+	.fs-lg-13{font-size:13px}
+	.fs-lg-14{font-size:14px}
+	.fs-lg-15{font-size:15px}
+	.fs-lg-16{font-size:16px}
+	.fs-lg-17{font-size:17px}
+	.fs-lg-18{font-size:18px}
+	.fs-lg-19{font-size:19px}
+	.fs-lg-20{font-size:20px}
+	.fs-lg-21{font-size:21px}
+	.fs-lg-22{font-size:22px}
+	.fs-lg-23{font-size:23px}
+	.fs-lg-24{font-size:24px}
+	.fs-lg-25{font-size:25px}
+	.fs-lg-26{font-size:26px}
+	.fs-lg-27{font-size:27px}
+	.fs-lg-28{font-size:28px}
+	.fs-lg-29{font-size:29px}
+	.fs-lg-30{font-size:30px}
+	.fs-lg-31{font-size:31px}
+	.fs-lg-32{font-size:32px}
+	.fs-lg-33{font-size:33px}
+	.fs-lg-34{font-size:34px}
+	.fs-lg-35{font-size:35px}
+	.fs-lg-36{font-size:36px}
+	.fs-lg-37{font-size:37px}
+	.fs-lg-38{font-size:38px}
+	.fs-lg-39{font-size:39px}
+	.fs-lg-40{font-size:40px}
+	.fs-lg-41{font-size:41px}
+	.fs-lg-42{font-size:42px}
+	.fs-lg-43{font-size:43px}
+	.fs-lg-44{font-size:44px}
+	.fs-lg-45{font-size:45px}
+	.fs-lg-46{font-size:46px}
+	.fs-lg-47{font-size:47px}
+	.fs-lg-48{font-size:48px}
+	.fs-lg-49{font-size:49px}
+	.fs-lg-50{font-size:50px}
+
+	.lh-lg-15{line-height:15px}
+	.lh-lg-16{line-height:16px}
+	.lh-lg-17{line-height:17px}
+	.lh-lg-18{line-height:18px}
+	.lh-lg-19{line-height:19px}
+	.lh-lg-20{line-height:20px}
+	.lh-lg-21{line-height:21px}
+	.lh-lg-22{line-height:22px}
+	.lh-lg-23{line-height:23px}
+	.lh-lg-24{line-height:24px}
+	.lh-lg-25{line-height:25px}
+	.lh-lg-26{line-height:26px}
+	.lh-lg-27{line-height:27px}
+	.lh-lg-28{line-height:28px}
+	.lh-lg-29{line-height:29px}
+	.lh-lg-30{line-height:30px}
+	.lh-lg-31{line-height:31px}
+	.lh-lg-32{line-height:32px}
+	.lh-lg-33{line-height:33px}
+	.lh-lg-34{line-height:34px}
+	.lh-lg-35{line-height:35px}
+	.lh-lg-36{line-height:36px}
+	.lh-lg-37{line-height:37px}
+	.lh-lg-38{line-height:38px}
+	.lh-lg-39{line-height:39px}
+	.lh-lg-40{line-height:40px}
+	.lh-lg-41{line-height:41px}
+	.lh-lg-42{line-height:42px}
+	.lh-lg-43{line-height:43px}
+	.lh-lg-44{line-height:44px}
+	.lh-lg-45{line-height:45px}
+	.lh-lg-46{line-height:46px}
+	.lh-lg-47{line-height:47px}
+	.lh-lg-48{line-height:48px}
+	.lh-lg-49{line-height:49px}
+	.lh-lg-50{line-height:50px}
+	.lh-lg-51{line-height:51px}
+	.lh-lg-52{line-height:52px}
+	.lh-lg-53{line-height:53px}
+	.lh-lg-54{line-height:54px}
+	.lh-lg-55{line-height:55px}
+	.lh-lg-56{line-height:56px}
+	.lh-lg-57{line-height:57px}
+	.lh-lg-58{line-height:58px}
+	.lh-lg-59{line-height:59px}
+	.lh-lg-60{line-height:60px}
+
+}
+
+@media only screen and (min-width:1920px) {
+
+/* 一倍图 */
+.fs-xl-12{font-size:12px}
+.fs-xl-13{font-size:13px}
+.fs-xl-14{font-size:14px}
+.fs-xl-15{font-size:15px}
+.fs-xl-16{font-size:16px}
+.fs-xl-17{font-size:17px}
+.fs-xl-18{font-size:18px}
+.fs-xl-19{font-size:19px}
+.fs-xl-20{font-size:20px}
+.fs-xl-21{font-size:21px}
+.fs-xl-22{font-size:22px}
+.fs-xl-23{font-size:23px}
+.fs-xl-24{font-size:24px}
+.fs-xl-25{font-size:25px}
+.fs-xl-26{font-size:26px}
+.fs-xl-27{font-size:27px}
+.fs-xl-28{font-size:28px}
+.fs-xl-29{font-size:29px}
+.fs-xl-30{font-size:30px}
+.fs-xl-31{font-size:31px}
+.fs-xl-32{font-size:32px}
+.fs-xl-33{font-size:33px}
+.fs-xl-34{font-size:34px}
+.fs-xl-35{font-size:35px}
+.fs-xl-36{font-size:36px}
+.fs-xl-37{font-size:37px}
+.fs-xl-38{font-size:38px}
+.fs-xl-39{font-size:39px}
+.fs-xl-40{font-size:40px}
+.fs-xl-41{font-size:41px}
+.fs-xl-42{font-size:42px}
+.fs-xl-43{font-size:43px}
+.fs-xl-44{font-size:44px}
+.fs-xl-45{font-size:45px}
+.fs-xl-46{font-size:46px}
+.fs-xl-47{font-size:47px}
+.fs-xl-48{font-size:48px}
+.fs-xl-49{font-size:49px}
+.fs-xl-50{font-size:50px}
+
+.lh-xl-15{line-height:15px}
+.lh-xl-16{line-height:16px}
+.lh-xl-17{line-height:17px}
+.lh-xl-18{line-height:18px}
+.lh-xl-19{line-height:19px}
+.lh-xl-20{line-height:20px}
+.lh-xl-21{line-height:21px}
+.lh-xl-22{line-height:22px}
+.lh-xl-23{line-height:23px}
+.lh-xl-24{line-height:24px}
+.lh-xl-25{line-height:25px}
+.lh-xl-26{line-height:26px}
+.lh-xl-27{line-height:27px}
+.lh-xl-28{line-height:28px}
+.lh-xl-29{line-height:29px}
+.lh-xl-30{line-height:30px}
+.lh-xl-31{line-height:31px}
+.lh-xl-32{line-height:32px}
+.lh-xl-33{line-height:33px}
+.lh-xl-34{line-height:34px}
+.lh-xl-35{line-height:35px}
+.lh-xl-36{line-height:36px}
+.lh-xl-37{line-height:37px}
+.lh-xl-38{line-height:38px}
+.lh-xl-39{line-height:39px}
+.lh-xl-40{line-height:40px}
+.lh-xl-41{line-height:41px}
+.lh-xl-42{line-height:42px}
+.lh-xl-43{line-height:43px}
+.lh-xl-44{line-height:44px}
+.lh-xl-45{line-height:45px}
+.lh-xl-46{line-height:46px}
+.lh-xl-47{line-height:47px}
+.lh-xl-48{line-height:48px}
+.lh-xl-49{line-height:49px}
+.lh-xl-50{line-height:50px}
+.lh-xl-51{line-height:51px}
+.lh-xl-52{line-height:52px}
+.lh-xl-53{line-height:53px}
+.lh-xl-54{line-height:54px}
+.lh-xl-55{line-height:55px}
+.lh-xl-56{line-height:56px}
+.lh-xl-57{line-height:57px}
+.lh-xl-58{line-height:58px}
+.lh-xl-59{line-height:59px}
+.lh-xl-60{line-height:60px}
+}

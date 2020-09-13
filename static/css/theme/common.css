@@ -1,3 +1,4 @@
+/* 公共情景 */
 :root {
 	/* 宽度 */
 	--max-width: 1230px;
@@ -19,8 +20,8 @@
 	--color-white: #fff;
 	--color-black: var(--color-main);
 	--color-theme: #2E74F3;
-	--color-theme-dark: #2E74F3; //深
-	--color-theme-deep: #2E74F3; //浅
+	--color-theme-dark: #2E74F3; /*深*/
+	--color-theme-deep: #2E74F3; /*浅*/
 	--price-color: #C52929;
 	--color-price: #C52929;
 	--color-grey: #828282;
@@ -29,7 +30,7 @@
 
 
 	/* 字体大小 */
-	--font-main: 28upx;
+	--font-main: 28px;
 
 	/* 背景色 */
 	--bg-grey: #F3F3F3;
@@ -38,20 +39,20 @@
 
 	/* 边框 */
 	--border-color: #BDBDBD;
-	--border-width: 2upx;
+	--border-width: 2px;
 	--border: var(--border-width) solid var(--border-color);
 	--border-black: var(--border-width) solid var(--color-black);
 
 	/* 圆角 */
-	--radius: 8upx;
+	--radius: 8px;
 
 	/* 内边距 */
-	--padding-mini: 30upx;
+	--padding-mini: 30px;
 	--padding-medium: calc(var(--padding-mini) * 2);
 	--padding-large: calc(var(--padding-mini) * 3);
 
 	/* 外边距 */
-	--margin-mini: 30upx;
+	--margin-mini: 30px;
 	--margin-medium: calc(var(--margin-mini) * 2);
 	--margin-large: calc(var(--margin-mini) * 3);
 
@@ -128,6 +129,6 @@
 /* 按钮 */
 .btn {
 	--btn-bg: var(--color-theme);
-	--btn-shadow: 0 2upx 2upx 0upx var(--color-theme);
+	--btn-shadow: 0 2px 2px 0px var(--color-theme);
 	--btn-radius: var(--radius);
 }

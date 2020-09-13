@@ -1,10 +1,39 @@
 {% extends 'base.html' %}
-{% block title %}<title>多商家后台</title>
-{% endblock %}
+{% block title %}<title>多商家后台</title>{% endblock %}
 {% block body %}
-<!-- 头部 -->
-<!-- 侧边栏 -->
-<!-- 主体内容 -->
+
+<aside class="aside">
+	<header></header>
+	<ul>
+		<li>
+			<div>
+				<a url="">跳转1</a>
+			</div>
+			<ul>
+				<li>
+					<div>
+						<a url="">跳转1</a>
+					</div>
+				</li>
+				<div>
+					<a url="">跳转1</a>
+				</div>
+				<div>
+					<a url="">跳转1</a>
+				</div>
+			</ul>
+
+		</li>
+	</ul>
+</aside>
+
+<section>
+	<header>
+
+	</header>
+</section>
+
+
 
 
 <!-- 页面结束 -->
@@ -17,71 +46,71 @@
 		data() {
 			return {
 				{% block dataset %} {% endblock %}
-			}
-		},
+		}
+	},
 		mounted() {
 			{% block mounted %} {% endblock %}
 		},
-		methods: {
-			{% block methods %} {% endblock %}
-			getCookie(name) {
-				var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
-				return r ? r[1] : undefined;
-			},
-			$POST({url,data,success = ()=>{},}) {
-				$.ajax({
-					url,
-					type: "POST",
-					headers: {
-						"X-CSRFToken": this.getCookie("csrftoken")
-					},
-					data,
-					success: (res) => {
-					},
-
-				})
-			},
-			$GET({url,data,success = ()=>{},}) {
-				$.ajax({
-					url,
-					type: "POST",
-					headers: {
-						"X-CSRFToken": this.getCookie("csrftoken")
-					},
-					data,
-					success: (res) => {
-					},
-			
-				})
-			},
-			$PUT({url,data,success = ()=>{},}) {
-				$.ajax({
-					url,
-					type: "POST",
-					headers: {
-						"X-CSRFToken": this.getCookie("csrftoken")
-					},
-					data,
-					success: (res) => {
-					},
-			
-				})
-			},
-			POST({url,data,success = ()=>{},}) {
-				$.ajax({
-					url,
-					type: "POST",
-					headers: {
-						"X-CSRFToken": this.getCookie("csrftoken")
-					},
-					data,
-					success: (res) => {
-					},
-			
-				})
-			},
-			
+	methods: {
+		{% block methods %} {% endblock %}
+		getCookie(name) {
+			var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+			return r ? r[1] : undefined;
 		},
+		$POST({ url, data, success = () => { }, }) {
+			$.ajax({
+				url,
+				type: "POST",
+				headers: {
+					"X-CSRFToken": this.getCookie("csrftoken")
+				},
+				data,
+				success: (res) => {
+				},
+
+			})
+		},
+		$GET({ url, data, success = () => { }, }) {
+			$.ajax({
+				url,
+				type: "POST",
+				headers: {
+					"X-CSRFToken": this.getCookie("csrftoken")
+				},
+				data,
+				success: (res) => {
+				},
+
+			})
+		},
+		$PUT({ url, data, success = () => { }, }) {
+			$.ajax({
+				url,
+				type: "POST",
+				headers: {
+					"X-CSRFToken": this.getCookie("csrftoken")
+				},
+				data,
+				success: (res) => {
+				},
+
+			})
+		},
+		POST({ url, data, success = () => { }, }) {
+			$.ajax({
+				url,
+				type: "POST",
+				headers: {
+					"X-CSRFToken": this.getCookie("csrftoken")
+				},
+				data,
+				success: (res) => {
+				},
+
+			})
+		},
+
+	},
 
 	})
 </script>

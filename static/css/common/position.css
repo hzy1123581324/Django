@@ -1,4 +1,10 @@
+@charset "UTF-8";
+
 /*固定定位*/
+
+[class*='fixed'] {
+  position: fixed;
+}
 
 .fixed_top {
   position: fixed;
@@ -9,14 +15,12 @@
 }
 
 .fixed_rg {
-  position: fixed;
   top: 0;
   right: 0;
   z-index: 100;
 }
 
 .fixed_btm {
-  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -34,33 +38,31 @@
 
 /*绝对定位*/
 
-
+[class*='absolute'] {
+  position: absolute;
+  /* z-index:99; */
+}
 
 .absolute_top {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
 }
 
 .absolute_btm {
-  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
 .absolute_lf {
-  position: absolute;
   top: 0;
   left: 0;
 }
 .absolute_rg {
-  position: absolute;
   top: 0;
   right: 0;
 }
 .absolute_rg_center {
-  position: absolute;
   top: 50%;
   right: 0;
   -webkit-transform: translateY(-50%);
@@ -70,7 +72,6 @@
   transform: translateY(-50%);
 }
 .absolute_lf_center {
-  position: absolute;
   top: 50%;
   left: 0;
   -webkit-transform: translateY(-50%);
@@ -80,7 +81,6 @@
   transform: translateY(-50%);
 }
 .absolute_top_center {
-  position: absolute;
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -90,7 +90,6 @@
   transform: translateX(-50%);
 }
 .absolute_btm_center {
-  position: absolute;
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -100,7 +99,6 @@
   transform: translateX(-50%);
 }
 .absolute_center {
-  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -111,7 +109,6 @@
 }
 
 .absolute_half {
-  position: absolute;
   top: 50%;
   left: 50%;
 }

@@ -104,7 +104,7 @@
     var options = {
         width: window.innerWidth,
         height: window.innerHeight,
-        keyword: "505",
+        keyword: "{{code}}",
         density: 10,
         densityText: 3,
         minDist: 20,
@@ -177,7 +177,7 @@
         var context = canvas.getContext("2d");
         context.fillStyle = "#000000";
         context.font = "80px 'Arial', sans-serif";
-        context.fillText("Not Fo333333und", 0, 80);
+        context.fillText("{{message}}", 0, 80);
 
         var imageData = context.getImageData(0, 0, 400, 400);
         data = imageData.data;

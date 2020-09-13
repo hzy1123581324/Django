@@ -1,0 +1,265 @@
+
+/*------------------*/
+.geist-spacer{
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin-left: 15.25pt;
+    margin-top: 15.25pt;
+}
+
+.full-screen{
+    width: 100%;
+    height: auto;
+}
+/************************外层容器**********************************/
+.holder{
+    max-width: var(--max-width);
+    width: auto;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.default.hover,.default:hover{
+    background-color: #fafafa;
+    color: #000;
+}
+/***********************小按钮***************************************/
+
+.mini-btn,.medium-btn{
+    display: inline-block;
+    width: auto;
+    height: 24px;
+    line-height: 22px;
+    font-size: var(--font-main);
+    padding: 0 10px 0 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    transition: color,border 0.2s ease;
+    color: var(--color-grey);
+    cursor: pointer;
+    background-color: #fff;
+    
+}
+.mini-btn:hover,.mini-btn.hover{
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+.medium-btn{
+    min-width: auto;
+    height: 32px;
+    line-height: 20px;
+    font-size: 0.875rem;
+    padding: 6px 12px;
+    
+    
+}
+.medium-btn:hover,.medium-btn.hover{
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+/***************************填充色按钮**************************************/
+
+[class*='fill-btn']{
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 38px;
+    white-space: nowrap;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    min-width: 170px;
+    height: 40px;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #fff;
+    background-color: #000;
+    user-select: none;
+    cursor: var(--cursor);
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    padding: 0px 25px;
+    margin: 0px;
+    transition: var(--tranistion-all);
+    overflow: hidden;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: var(--geist-radius);
+}
+[class*='fill-btn']:hover,[class*='fill-btn'].hover{
+    color: #000;
+    background-color: #fff;
+}
+.fill-btn-small{
+    min-width: auto;
+    height: 24px;
+    line-height: 22px;
+    padding: 0px 10px;
+}
+/****************************禁用按钮*************************************/
+.disable-btn{
+    cursor: var(--cursor);
+    color: #888;
+    filter: grayscale(1);
+    min-width: auto;
+    height: 24px;
+    line-height: 22px;
+    padding: 0px 10px;
+    border: var(--border);
+}
+[class*='-btn']{
+    --cursor: pointer;
+}
+[class*='disable']{
+    --cursor: not-allowed;
+}
+/******************标题************************/
+.main-title{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.subtitle{
+    color: var(--color-grey);
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+}
+
+/*****************跳转链接**************************/
+
+/* 蓝色带箭头链接，鼠标移入出现下划线 */
+.link{
+    color: #0070f3;
+    font-size: inherit;
+    text-decoration: none;
+}
+.link.hover,.link:hover{
+    text-decoration: underline;
+}
+[class*='a-link']{
+    color: #0070f3;
+    font-size: inherit;
+    text-decoration: none;
+}
+[class*='a-link']::after{
+    content: ' →';
+}
+[class*='a-link'].hover,[class*='a-link']:hover{
+    text-decoration: underline;
+}
+.a-link-lf::before{
+    content: '← ';
+}
+.a-link-lf::after{
+    display: none;
+}
+/* 黑色链接，鼠标移入出现下划线 */
+.dark-link{
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.dark-link:hover,.dark-link.hover{
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* ************遮罩层***************** */
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.3);
+    z-index: 9990;
+}
+
+/**************输入框********************/
+
+.input-box{
+    -webkit-box-align: center;
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    height: calc(9 * var(--geist-space));
+    border-radius: 5px;
+    transition: border 0.2s ease 0s, color 0.2s ease 0s;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 4px 10px;
+}
+.input-box:focus{
+    outline: -webkit-focus-ring-color auto 1px;
+}
+.input-box input{
+    box-shadow: none;
+    box-sizing: border-box;
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 26px;
+    width: 100%;
+    color: #000;
+    background-color: transparent;
+    caret-color: #000;
+    text-overflow: ellipsis;
+    -webkit-appearance: none;
+    border-radius: 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 0px;
+    outline: 0px;
+}
+
+
+.overflow-scroll-y{
+    overflow-y: auto;
+}
+
+
+
+/* ***************状态*********************** */
+.status{
+    background-color: #50e3c2;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+}
+.status:hover::after{
+    content: attr(data-title);
+    white-space : nowrap;
+    position: absolute;
+    border: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+    padding: 6px;
+    font-size: 12px;
+    top: 15px;
+    left: 15px;
+    z-index: var(--index10);
+}
+
+
+/*  **************图片****************  */
+.avatar{
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+}

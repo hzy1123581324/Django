@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/*重设默认样式*/
+body, html,
+header,section,footer,/*语意标签*/
+div,p,/*块级元素*/
+span,img,i,
+h1,h2,h3,h4,h5,h6,
+ol,li,ul,dl,dd,dt,/*列表*/
+button, input,textarea {/**/
+	font-family: inherit;
+	padding: 0;
+	margin: 0;
+	-webkit-margin-before: 0em;/*css3新增*/
+	-webkit-margin-after: 0em;/*css3新增*/
+	-webkit-margin-start: 0px;/*css3新增*/
+	-webkit-margin-end: 0px;/*css3新增*/
+	text-decoration: none;
+	border: 0;
+	list-style: none;
+	box-sizing: border-box;
+	line-height: inherit;
+	outline: 0;
+	font-weight: inherit;
+	position: relative;
+	font-style: normal;
+	cursor: var(--cursor);
+	/* background-color: inherit; */
+}
+h1,h2,h3,h4,h5,h6{
+	text-align: center;
+}
+textarea{/*去掉右下三角*/
+	resize:none;
+}
+html{
+	max-height: 100%;
+	height:100%;
+}
+
+a{
+	color:inherit;
+	text-decoration: none;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+input{
+	background-color: transparent;
+	font-size: inherit;
+}
+
+/*占位符样式*/   /*用逗号隔开无效*/
+::-webkit-input-placeholder/* 使用webkit内核的浏览器 */
+{
+	 color:#999;
+	 font-size: 1em;
+}
+:-moz-placeholder
+{
+	 color:#999;
+	 font-size: 1em;
+}
+::-moz-placeholder/* Firefox版本4-18 */
+{
+	 color:#999;
+	 font-size: 1em;
+}
+:-ms-input-placeholde/* Firefox版本19+ */
+{
+	 color:#999;
+	 font-size: 1em;
+}

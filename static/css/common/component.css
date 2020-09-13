@@ -1,0 +1,382 @@
+/* 组件样式命名规范  组件名-类 */
+
+
+/* ************scroll组件****************** */
+.scroll-container{
+  position: relative;
+  background-color: #fff;
+  overflow-y: hidden;
+}
+.scroll-main{
+  width: 100%;
+  background-color: inherit;
+}
+
+/* ************picker组件****************** */
+.picker-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0);
+  transition: all ease-in .3s 0s; 
+  z-index: -1;
+}
+
+.picker-mask.show{
+  background-color: rgba(51,51,51,.6);
+  z-index: 999999999;
+
+}
+.picker-container{
+  height: 76.8vw;
+  position: absolute;
+  bottom: -76.8vw;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  transition: all ease-in-out .3s 0s; 
+}
+.picker-mask.show .picker-container{
+  bottom: 0;
+}
+
+.picker-main{
+  position: relative;
+  height:83.333333333%;
+  overflow-y: hidden;
+}
+.picker-main::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 25.6vw;/* 96 X 2 */
+  left: 0;
+  right: 0;
+  top: -25.6vw;
+  box-shadow: 0 0vw 25.6vw 25.6vw rgba(255,255,255,.8),0 89.6vw 25.6vw 25.6vw rgba(255,255,255,.8);
+  z-index: 9999999;
+}
+
+.picker-main::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  bottom: 0;
+  box-shadow: 0 -25.6vw 0 0px #efefef,0 -38.4vw 0 0px #efefef;
+}
+.picker-col{
+  /* overflow-y: hidden; */
+  /* height: 100%; */
+  /* padding-top: 25.6vw;
+  padding-bottom: 25.6vw; */
+  /* position: absolute; */
+  /* top:0;
+  left:0; */
+}
+
+.picker-item{
+  overflow: hidden;
+  text-overflow:ellipsis;/*文本溢出显示省略号*/
+  white-space:nowrap;/*文本不会换行（单行文本溢出）*/
+  text-align: center;
+  padding: 0 .5em;
+}
+
+
+
+
+/******************** 文件上传控件************************** */
+.fileUpload-main{
+  display: inline-block;
+}
+.fileUpload-box{
+  display: inherit;
+}
+.fileUpload-box+input[type='file']{
+  opacity: 0;
+  filter: alpha(opacity=0);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+/*******************导航栏***********************/
+
+.navbar-box {
+  margin-top:60px;
+  position: fixed;
+  background-color: #fff;
+  height: 48px;
+  width: 100%;
+  z-index:999;
+}
+
+.navbar-box .navbar-main {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+
+}
+
+.navbar-container {
+  padding-right: 11.4666667vw;
+}
+
+.navbar-box .navbar-item {
+  display: inline-block;
+  height: 100%;
+  max-width: 33.33vw;
+  min-width: 20vw;
+  vertical-align: middle;
+  position: relative;
+}
+/* .navbar-item-active{
+   background-color: red; 
+
+} */
+.navbar-box .panel-handl {
+  width: 11.4666667vw;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-box .panel-main {
+  position: absolute;
+  opacity: 0;
+  top: 200%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 60vh;
+  height:0;
+  background-color: inherit;
+  z-index: -9999999;
+  transition:  all ease-in .3s 0s;
+}
+.navbar-box .panel-main.panel-main-active{
+  top:100%;
+  opacity: 1;
+  height:auto;
+  z-index: auto;
+}
+.navbar-box .panel-main::after {
+  content: '';
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(51, 51, 51, .6);
+  opacity: 0;
+  transition:  all ease-in .3s 0s;
+  
+}
+.navbar-box .panel-main.panel-main-active::after{
+  opacity: 1;
+  height:100vh;
+}
+
+.panel-scroll {
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.navbar-box .panel-item {
+  width: 18.86667vw;
+  height: 8vw;
+  background-color: #f0f0f0;
+}
+
+.navbar-box .panel-item:not(:nth-child(4n-3)) {
+  margin-left: 5.3vw;
+}
+.navbar-progress{
+  width: 16vw;
+  height:3px;
+  position: absolute;
+  bottom: 0;
+  transition: all ease-in .3s 0s;
+  
+}
+
+/* 仿支付宝 输入支付密码组件 */
+.paymentBox {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100vw;
+  background-color: #E4E8F1;
+}
+
+.paymentBox::before {
+  content:"";
+  width: 100vw;
+  height: 100vh;
+  background:rgba(51, 51, 51, .4);
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+.payment-init-box {
+  /* border:.13333vw solid #d2d2d2; */
+  box-shadow: 0 0 0 0.26667vw #e7e7e7;
+  margin: 7.2vw 4vw;
+  overflow: hidden;
+}
+
+.payment-init-box .payment-init {
+  position:relative;
+}
+
+.payment-init-box .payment-init.satisfy::before {
+  content:'';
+  width: 3.2vw;
+  height: 3.2vw;
+  position:absolute;
+  border-radius:50%;
+  background:#333;
+  top:50%;
+  left:50%;
+  margin-left:-1.6vw;
+  margin-top:-1.6vw;
+
+}
+.payment-forget{
+  color: #3490C7;
+  margin: 6vw 0 7.2vw;
+}
+
+.payment-init-box .payment-init+.payment-init {
+  box-shadow: -0.26667vw 0 0 0.26667vw #efefef;
+}
+.payment-numcell{
+  box-shadow: 0 0 0 0.13333vw #e7e7e7;
+}
+.payment-keyboard{
+  position: relative;
+}
+.payment-cancel{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+.payment-cancel-item{
+  border-radius: .8vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 4.8vw;
+  width:auto;
+  fill: #fff;
+}
+
+
+
+/*    日历组件   */
+
+.calendar-box{
+  position: relative;
+}
+.calendar-main{
+  color: #2a2a2a;
+  background-color: #fff;
+  overflow: hidden;
+  /* width:100%; */
+  position: absolute;
+  bottom:16vw;
+  left:4vw;
+  right:4vw;
+}
+.calendar-mask{
+    content: '';
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(51, 51, 51, .4);
+
+}
+.calendar-title{
+  position: relative;
+}
+.calendar-title::after{
+  content: '';
+  position: absolute;
+  bottom: -4vw;
+  left: -25%;
+  width:150%;
+  height: 0.133333vw;
+  box-shadow: 0 0 0 0.13333vw #efefefef;
+  z-index: 9999;
+}
+.calendar-day-item {
+  text-align: center;
+  margin-top: 2.666667vw;
+  color: #2a2a2a;
+  width: 14.2857%;
+}
+.calendar-day-item-unuse{
+  opacity: .4;
+}
+.calendar-days-box{
+  overflow: hidden;
+  position: relative;
+}
+.calendar-days-box>div{
+  position: relative;
+  top:0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+
+  transition: all ease-out .3s 0s;
+}
+
+.calendar-day-item-active{
+  background-color: #00d5ff;
+  color: #fff;
+}
+
+
+.calendar-close{
+  position: fixed;
+  left:50%;
+  bottom:4vw;
+  margin-left:-4vw;
+  box-shadow:0 0 0 0.266667vw #fff;
+  z-index: 9999;
+}
+.calendar-close::after,.calendar-close::before{
+  content: '';
+  position: absolute;
+
+}
+
+
+
+

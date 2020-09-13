@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>多商家后台</title>{% endblock %}
+
+{% block body %}
+
+<!-- 头部 -->
+<header class="navbar-custom">
+    头部
+</header>
+<aside class="left-side-menu">
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+
+
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+    <div>侧边栏</div>
+
+</aside>
+<section class="content-page">
+    <footer>section中的footer</footer>
+</section>
+<!-- 页面结束 -->
+{% endblock %}
+<!-- vue  -->
+{% block extra-vue %}
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data() {
+            return {
+                {% block dataset %} {% endblock %}
+        }
+    },
+        mounted() {
+			{% block mounted %} {% endblock %}
+		},
+    methods: {
+        {% block methods %} {% endblock %}
+        getCookie(name) {
+            var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+            return r ? r[1] : undefined;
+        },
+        $POST({ url, data, success = () => { }, }) {
+            $.ajax({
+                url,
+                type: "POST",
+                headers: {
+                    "X-CSRFToken": this.getCookie("csrftoken")
+                },
+                data,
+                success: (res) => {
+                },
+
+            })
+        },
+        $GET({ url, data, success = () => { }, }) {
+            $.ajax({
+                url,
+                type: "POST",
+                headers: {
+                    "X-CSRFToken": this.getCookie("csrftoken")
+                },
+                data,
+                success: (res) => {
+                },
+
+            })
+        },
+        $PUT({ url, data, success = () => { }, }) {
+            $.ajax({
+                url,
+                type: "POST",
+                headers: {
+                    "X-CSRFToken": this.getCookie("csrftoken")
+                },
+                data,
+                success: (res) => {
+                },
+
+            })
+        },
+        POST({ url, data, success = () => { }, }) {
+            $.ajax({
+                url,
+                type: "POST",
+                headers: {
+                    "X-CSRFToken": this.getCookie("csrftoken")
+                },
+                data,
+                success: (res) => {
+                },
+
+            })
+        },
+
+    },
+
+	})
+</script>
+
+{% endblock %}

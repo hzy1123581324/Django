@@ -20,6 +20,8 @@ def app_index(request):
     # return HttpResponseRedirect('/storeadmin/err/404')
     return render(request, 'storeadmin/index.html', {'site': 'site', })
 
+def test(request):
+    return render(request,'storeadmin/demo.html');
 
 def err(request, code):
     # enabled_admins =

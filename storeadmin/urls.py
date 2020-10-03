@@ -22,8 +22,8 @@ urlpatterns = [
 
     re_path('^$', views.app_index, name="app_index"),
 	
-    path('/demo',views.test,name = 'test'),
-    path('/scroll',views.scroll,name = 'scroll'),
+    path('demo',views.test,name = 'test'),
+    path('scroll',views.scroll,name = 'scroll'),
 	re_path('err/(\d+)$', views.err,name="err"),
 	
     # url(r'^(\w+)/(\w+)/$', views.table_obj_list, name="table_obj_list"),

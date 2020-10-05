@@ -18,7 +18,65 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def app_index(request):
     # enabled_admins =
     # return HttpResponseRedirect('/storeadmin/err/404')
-    return render(request, 'storeadmin/index.html', {'site': 'site', })
+    sideList =[
+        {
+            'child': [],
+            'title': '标题1',
+            'url': '#',
+            "id": 1
+        },
+        {
+            "id": 2,
+            'child': [
+                {
+                    'title': '标题2-1',
+                    'url': '#',
+                    "id": "2-1"
+                },
+                {
+                    'title': '标题2-2',
+                    'url': '#',
+                     "id": "2-0"
+                },
+                {
+                    'title': '标题2-3',
+                    'url': '#',
+                     "id": "2-2"
+                },
+                {
+                    'title': '标题2-4',
+                    'url': '#',
+                     "id": "2-3"
+                },
+                {
+                    'title': '标题2-4',
+                    'url': '#',
+                     "id": "2-4"
+                },
+
+            ],
+            'title': '标题2',
+        },
+        {
+             "id": "3",
+            'child': [
+                {
+                    'title': '标题3-1',
+                    'url': '#',
+                     "id": "3-2"
+                },
+                {
+                    'title': '标题3-2',
+                    'url': '#',
+                     "id": "3-1"
+                },
+            ],
+            'title': '标题3'
+        },
+    ]
+    # sideList = [{},{}]
+    print(json.dumps(sideList))
+    return render(request, 'storeadmin/index.html', {'site': 'site', 'sideList': str(sideList).encode('utf-8').decode("utf-8") })
 
 def scroll(request):
     return render(request,'storeadmin/scroll.html');

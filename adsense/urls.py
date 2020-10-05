@@ -41,6 +41,8 @@ urlpatterns = [
 	  
 	
 	re_path('^storeadmin',include('storeadmin.urls')),
+    re_path('^kingadmin',include('kingadmin.urls')),
+    re_path('^store',include('store.urls')),
     path('', views.index),
     path('index/', views.index),
     re_path('^page/.html$',web_views.index),

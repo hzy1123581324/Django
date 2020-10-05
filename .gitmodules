@@ -1,0 +1,3 @@
+[submodule "storeadmin/static/storeadmin/css"]
+	path = storeadmin/static/storeadmin/css
+	url = git@gitee.com:hzy1109007763/css.git

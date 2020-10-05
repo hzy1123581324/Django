@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
 	'storeadmin',
+    'kingadmin',
+    'store',
     'web',
 ]
 
@@ -57,7 +59,10 @@ ROOT_URLCONF = 'adsense.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),os.path.join(BASE_DIR, 'storeadmin/templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'storeadmin/templates'),
+            os.path.join(BASE_DIR, 'kingadmin/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,6 +153,7 @@ STATIC_ROOT = 'static' ## 新增行
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static' if DEBUG else '/static/'),
 	os.path.join(BASE_DIR,'storeadmin/static' if DEBUG else '/storeadmin/static/'),
+    os.path.join(BASE_DIR,'kingadmin/static' if DEBUG else '/kingadmin/static/'),
     # 如果DEBUG为true执行static否则执行/static/
 )
 

@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 # 多商家数据库
 
+
 class Stores(models.Model):
     """
     店铺（默认是平台）
@@ -16,7 +17,9 @@ class Stores(models.Model):
     店铺营业证书
     店铺介绍
     """
-    id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID' )
+    id = models.AutoField(auto_created=True, primary_key=True,
+                          serialize=False, verbose_name='ID')
+
 
 class Commodity(models.Model):
     '''
@@ -33,6 +36,10 @@ class Commodity(models.Model):
     商品优惠券 （跟优惠券表是多对多关系）
 
     '''
+    store = models.ForeignKey(Stores, on_delete=models.CASCADE)
+    id = models.AutoField(auto_created=True, primary_key=True,
+                          serialize=False, verbose_name='ID')
+
 
 class CommodityDetails(models.Model):
     '''
@@ -43,5 +50,32 @@ class CommodityDetails(models.Model):
     商品介绍  （富文本）
     是否收藏
     商品规格
-    
+    是否是实物（分为虚拟商品和实物商品，虚拟商品购买是没有收货地址，不可退款等）
+
     '''
+    commodity = models.OneToOneField(Commodity, on_delete=models.CASCADE)
+
+
+class Order(models.Model):
+    """
+    商品订单
+    订单id,
+    商品id,
+    数量，
+    规格
+    收货地址，
+    优惠券（使用的优惠券）,
+    留言：长文本
+    用户
+
+
+    """
+
+
+class OrderDetails(models.Model):
+
+    '''
+    订单详情
+    '''
+
+    order = models.OneToOneField(Order, on_delete=models.CASCADE)

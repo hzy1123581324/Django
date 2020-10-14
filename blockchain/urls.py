@@ -16,7 +16,7 @@ Including another URLconf
 # from django.contrib import admin
 # # from django.conf.urls import url
 # from django.urls import include
-# from django.urls import path,re_path
+from django.urls import path,re_path
 # from web.views import views as web_views
 # from app.views import views,login
 # from django.conf import settings
@@ -34,7 +34,12 @@ Including another URLconf
 # handler500 = views.page_error
 
 urlpatterns = [
-    
+        # url(r'^admin/', admin.site.urls),
+      re_path('^mine', views.mine,name="blockMine"),
+      re_path('^transactions/new/', views.new_transaction,name="blockNew"),
+      re_path('^chain/', views.full_chain,name="blockChain"),
+      re_path('^register', views.register_nodes,name="blockRegister"),
+      re_path('^resolve', views.consensus,name="blockRresolve"),
 
 
 ]

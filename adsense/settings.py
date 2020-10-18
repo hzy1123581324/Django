@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -38,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-	'storeadmin',
+    'blockchain',
+    'chat',
+    'storeadmin',
     'kingadmin',
     'store',
     'web',
@@ -128,7 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # LANGUAGE_CODE = 'en-us'
 
-from django.utils.translation import gettext_lazy as _
 LANGUAGES = [
     ('zh-Hans', _('Chinese')),
 ]
@@ -143,17 +145,18 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 # 配置静态别名
-STATIC_ROOT = 'static' ## 新增行
+STATIC_ROOT = 'static'  # 新增行
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static' if DEBUG else '/static/'),
-	os.path.join(BASE_DIR,'storeadmin/static' if DEBUG else '/storeadmin/static/'),
-    os.path.join(BASE_DIR,'kingadmin/static' if DEBUG else '/kingadmin/static/'),
+    os.path.join(BASE_DIR, 'static' if DEBUG else '/static/'),
+    os.path.join(
+        BASE_DIR, 'storeadmin/static' if DEBUG else '/storeadmin/static/'),
+    os.path.join(
+        BASE_DIR, 'kingadmin/static' if DEBUG else '/kingadmin/static/'),
     # 如果DEBUG为true执行static否则执行/static/
 )
 
@@ -165,9 +168,12 @@ STATICFILES_DIRS = (
 
 if DEBUG:
     MEDIA_URL = '/media/'
-    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static-only")
-    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "media")
+    STATIC_ROOT = os.path.join(os.path.dirname(
+        BASE_DIR), "whattheheck", "static", "static-only")
+    MEDIA_ROOT = os.path.join(os.path.dirname(
+        BASE_DIR), "whattheheck", "static", "media")
     STATICFLIES_DIRS = (
-        os.path.join(os.path.dirname(BASE_DIR), "whattheheck", "static", "static")
+        os.path.join(os.path.dirname(BASE_DIR),
+                     "whattheheck", "static", "static")
 
     )

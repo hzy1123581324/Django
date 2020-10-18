@@ -16,8 +16,10 @@ Including another URLconf
 # from django.contrib import admin
 # # from django.conf.urls import url
 # from django.urls import include
+from . import views
+from django.urls import re_path
 from django.urls import path, re_path
-from . import views as b_biew
+# from blockchain import views as b_biew
 # from app.views import views,login
 # from django.conf import settings
 # from django.conf.urls.static import static
@@ -35,11 +37,17 @@ from . import views as b_biew
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    re_path('^mine', b_biew.mine, name="blockMine"),
-    re_path('^transactions/new/', b_biew.new_transaction, name="blockNew"),
-    re_path('^chain/', b_biew.full_chain, name="blockChain"),
-    re_path('^register', b_biew.register_nodes, name="blockRegister"),
-    re_path('^resolve', b_biew.consensus, name="blockRresolve"),
+    # re_path('^mine', b_biew.mine, name="blockMine"),
+    # re_path('^transactions/new/', b_biew.new_transaction, name="blockNew"),
+    # re_path('^chain/', b_biew.full_chain, name="blockChain"),
+    # re_path('^register', b_biew.register_nodes, name="blockRegister"),
+    # re_path('^resolve', b_biew.consensus, name="blockRresolve"),
 
 
 ]
+
+
+# urlpatterns = [
+#     re_path(r'^$', views.index, name='index'),
+#     re_path(r'^(?P<room_name>[^/]+)/$', views.room, name='room'),
+# ]

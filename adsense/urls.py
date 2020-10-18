@@ -16,15 +16,15 @@ Including another URLconf
 from django.contrib import admin
 # from django.conf.urls import url
 from django.urls import include
-from django.urls import path,re_path
+from django.urls import path, re_path
 from web.views import views as web_views
-from app.views import views,login
+from app.views import views, login
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.views import static ##新增
-from django.conf import settings ##新增
-from django.conf.urls import url ##新增
+from django.views import static  # 新增
+from django.conf import settings  # 新增
+from django.conf.urls import url  # 新增
 
 
 # 增加的条目
@@ -35,20 +35,22 @@ handler500 = views.page_error
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^static/(?P<path>.*)$', static.serve,
-      {'document_root': settings.STATIC_ROOT}, name='static'),
-	  
-	  
-	
-	re_path('^storeadmin',include('storeadmin.urls')),
-    re_path('^kingadmin',include('kingadmin.urls')),
-    re_path('^store',include('store.urls')),
+    # url(r'^static/(?P<path>.*)$', static.serve,
+    #     {'document_root': settings.STATIC_ROOT}, name='static'),
+
+
+
     path('', views.index),
+    re_path('^storeadmin', include('storeadmin.urls')),
+    re_path('^kingadmin', include('kingadmin.urls')),
+    re_path('^store', include('store.urls')),
+    re_path('^blockchain', include('blockchain.urls')),
+    re_path('^chat', include('chat.urls')),
     path('index/', views.index),
-    re_path('^page/.html$',web_views.index),
+    re_path('^page/.html$', web_views.index),
     path('test/', web_views.index),
-    path('getdata',views.getdata),
-    path('updated',views.updated),
+    path('getdata', views.getdata),
+    path('updated', views.updated),
     re_path('^login/', login.LoginView.as_view()),
     # re_path('^page/(?P<page>\w+).html?(?P<>)', views.detail, name="detail",)
 

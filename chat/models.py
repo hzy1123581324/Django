@@ -15,7 +15,7 @@ class User(BaseModel):
     loginPassword = models.CharField(max_length=64)
     # 登录密码
     avatar = models.ImageField(
-        upload_to='img/%Y/%m/%d', verbose_name='用户头像', label='头像', help_text='不能超过5M!')
+        upload_to='img/%Y/%m/%d', verbose_name='用户头像')
     # 用户登录时间
 
     # menus = models.ManyToManyField("Menus",blank=True)
@@ -80,5 +80,3 @@ class Grade(BaseModel):
     用户的等级
     '''
     pass
-
-

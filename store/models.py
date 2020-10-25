@@ -35,7 +35,7 @@ class Stores(BaseModel):
     店铺营业证书
     店铺介绍
     """
-    content = models.TextField()
+    content = models.TextField(default="", verbose_name="店铺详情")
 
 
 class Commodity(BaseModel):

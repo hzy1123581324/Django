@@ -12,22 +12,18 @@
 <aside class="left-side-menu noscrollbar">
     {% navListTag %}
     {% verbatim %}
-        <ul class="side-list">
-            <li :class="['side-item',item.child.length>0&&'haschild']" v-for="item in sideList" :key="item.id">
-                <div class="side-menu-title">{{item.title}}</div>
-                <ul  class="side-list" v-if="item.child.length>0">
-                    <li class='side-item' v-for="i in item" :key="i.id">
-                        <a  class="side-menu-title" href="i.url">{{item.title}}</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    {% endverbatim %}
+    <!-- <asideTab :list='sideList' /> -->
+</aside>
+{% endverbatim %}
 
 
 </aside>
 
 <section class="content-page">
+    <div class="main">
+
+    </div>
+
     <footer>section中的footer</footer>
 </section>
 
@@ -36,76 +32,22 @@
 <!-- vue  -->
 {% block extra-vue %}
 <script>
-    console.log({{sideList|safe }});
+
+
     // console.log( JSON.parse({{sideList}}));
+    const sideList = {{ sideList| safe}};
     var vue = new Vue({
         el: '#app',
         data() {
             return {
                 // sideList: JSON.parse({{sideList}}),
-                sideList: {{sideList|safe }}
-    //             sideList:[
-    //     {
-    //         'child': [],
-    //         'title': '标题1',
-    //         'url': '#',
-    //         "id": 1
-    //     },
-    //     {
-    //         "id": 2,
-    //         'child': [
-    //             {
-    //                 'title': '标题2-1',
-    //                 'url': '#',
-    //                 "id": "2-1"
-    //             },
-    //             {
-    //                 'title': '标题2-2',
-    //                 'url': '#',
-    //                  "id": "2-0"
-    //             },
-    //             {
-    //                 'title': '标题2-3',
-    //                 'url': '#',
-    //                  "id": "2-2"
-    //             },
-    //             {
-    //                 'title': '标题2-4',
-    //                 'url': '#',
-    //                  "id": "2-3"
-    //             },
-    //             {
-    //                 'title': '标题2-4',
-    //                 'url': '#',
-    //                  "id": "2-4"
-    //             },
-
-    //         ],
-    //         'title': '标题2',
-    //     },
-    //     {
-    //          "id": "3",
-    //         'child': [
-    //             {
-    //                 'title': '标题3-1',
-    //                 'url': '#',
-    //                  "id": "3-2"
-    //             },
-    //             {
-    //                 'title': '标题3-2',
-    //                 'url': '#',
-    //                  "id": "3-1"
-    //             },
-    //         ],
-    //         'title': '标题3'
-    //     },
-    // ],
+                sideList,
                 {% block dataset %} {% endblock %}
         }
     },
         mounted() {
-			{% block mounted %} {% endblock %}
-		},
+        {% block mounted %} {% endblock %}
+    },
     methods: {
         {% block methods %} {% endblock %}
         getCookie(name) {

@@ -16,26 +16,45 @@ from utils.baseModel import BaseModel
 #         abstract = True  # 说明是抽象模型类, 用于继承使用，数据库迁移时不会创建BaseModel的表
 
 
-class Clerk(BaseModel):
-    '''
-        店员表
-    '''
-
-
 class Stores(BaseModel):
     """
-    店铺（默认是平台）
+    店铺名称（默认是平台）
     店铺 id 自动生成继承BaseModel
 
     店铺地址
     店铺经纬度
-    店铺名称
-    联系方式（选择）
+    联系方式（选择 电话，微信，qq）
     店铺所有者
     店铺营业证书
     店铺介绍
+    收款账户
+    店员
     """
+    CONTACTTYPE = (
+        (1, "电话"),
+        (2, "微信"),
+        (3, "QQ"),
+    )
+    lon = models.DecimalField(
+        max_digits=8, decimal_places=3, verbose_name='经度')
+    lat = models.DecimalField(
+        max_digits=8, decimal_places=3, verbose_name='纬度')
+    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    contacttype = models.IntegerField(
+        choices=CONTACTTYPE, default='1', verbose_name='联系类型')
+    contact = models.CharField(blank=True, verbose_name='联系内容')
     content = models.TextField(default="", verbose_name="店铺详情")
+    clerk = models.ForeignKey(
+        User, on_delete=models.CASCADE, verbose_name='店员')
+
+
+class Clerk(BaseModel):
+    '''
+        店员表
+
+    '''
+    name = models.CharField(verbose_name='职位')
+    user = models.ManyToManyField(User, '店员', on_delete=models.CASCADE)
 
 
 class Commodity(BaseModel):
@@ -52,18 +71,21 @@ class Commodity(BaseModel):
     商品标签    （跟标签表是多对多关系）
     商品优惠券 （跟优惠券表是多对多关系）
 
+
     '''
     store = models.ForeignKey(Stores, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, verbose_name='名称')
     caption = models.CharField(max_length=100, verbose_name='副标题')
     sales = models.IntegerField(default=0, verbose_name='销量')
-    comments = models.IntegerField(default=0, verbose_name='评价数')
     stock = models.IntegerField(default=0, verbose_name='库存')
     sales = models.IntegerField(default=0, verbose_name='销量')
     comments = models.IntegerField(default=0, verbose_name='评价数')
     is_launched = models.BooleanField(default=True, verbose_name='是否上架销售')
-    default_image_url = models.CharField(max_length=200, default='',
-                                         null=True, blank=True, verbose_name='默认图片')
+    main_image_url = models.CharField(max_length=200, default='',
+                                      null=True, verbose_name='主图片')
+    thumbnail = models.CharField(max_length=200, default='',
+                                 null=True, blank=True, verbose_name='缩略图')
+    coupons = models.ForeignKey('Coupons', blank=True, verbose_name='优惠券')
 
     class Meta:
         db_table = 'tb_sku'
@@ -72,6 +94,51 @@ class Commodity(BaseModel):
 
     def __str__(self):
         return '%s: %s' % (self.id, self.name)
+
+
+# class Category(BaseModel):
+#     '''
+#     商品类别
+#     '''
+#     name = models.CharField(max_length=30, verbose_name='分类名称')
+
+#     class Meta:
+#         verbose_name_plural = '商品分类'
+
+#     def __str__(self):
+#         return self.name
+
+
+class GoodsCategory(models.Model):
+    """
+    商品类别
+    """
+    CATEGORY_TYPE = (
+        (1, "一级类目"),
+        (2, "二级类目"),
+        (3, "三级类目"),
+    )
+
+    name = models.CharField(default="", max_length=30,
+                            verbose_name="类别名", help_text="类别名")
+    code = models.CharField(default="", max_length=30,
+                            verbose_name="类别code", help_text="类别code")
+    desc = models.TextField(default="", verbose_name="类别描述", help_text="类别描述")
+
+    category_type = models.IntegerField(
+        choices=CATEGORY_TYPE, verbose_name="类目级别", help_text="类目级别")
+    parent_category = models.ForeignKey("self", null=True, blank=True, verbose_name="父类目级别", help_text="父目录",
+                                        related_name="sub_cat", on_delete=models.CASCADE)
+    is_tab = models.BooleanField(
+        default=False, verbose_name="是否导航", help_text="是否导航")
+    # add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
+
+    class Meta:
+        verbose_name = "商品类别"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
 
 
 class Brand(BaseModel):
@@ -104,6 +171,15 @@ class CommodityDetails(BaseModel):
 
     '''
     commodity = models.OneToOneField(Commodity, on_delete=models.CASCADE)
+
+
+class Coupons(BaseModel):
+    '''
+    优惠券表
+
+    '''
+    worth = models.
+    pass
 
 
 class Order(BaseModel):
@@ -179,8 +255,12 @@ class OrderDetails(BaseModel):
         max_digits=10, decimal_places=2, verbose_name="运费")
     pay_method = models.SmallIntegerField(choices=PAY_METHOD_CHOICES,
                                           default=4, verbose_name="支付方式")
+
     status = models.SmallIntegerField(choices=ORDER_STATUS_CHOICES,
                                       default=1, verbose_name="订单状态")
+
+    actual_payment = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name="实际付款")
 
     class Meta:
         db_table = "tb_order_info"

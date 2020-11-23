@@ -2,7 +2,7 @@
 from kingadmin.sites import site
 from kingadmin.admin_base import BaseKingAdmin
 from store import models
-print('crm kingadmin ............')
+# print('crm kingadmin ............')
 
 # class CustomerAdmin(BaseKingAdmin):
 #     list_display = ['id','name','source','contact_type','contact','consultant','consult_content','status','date']

@@ -1,16 +1,17 @@
 from django.contrib import admin
-from .models.models import User,Role,Recommend,UserDetails
+from .models.models import User, Role, Recommend, UserDetails
 # Register your models here.
+
 
 class UserAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('名称', {'fields': ['nickname','username']}),
+        ('名称', {'fields': ['nickname', 'username']}),
         # ('密码', {'fields': ['password','paypassword']}),
     ]
     # fields = ['loginTime']
     # list_display = ['id','name','source','contact_type','contact','consultant','consult_content','status','date']
     # list_filter = ['source','consultant','status','date']
-    search_fields = ['username','nickname']
+    search_fields = ['username', 'nickname']
 
     model = UserDetails
     # class Meta:
@@ -37,6 +38,7 @@ class UserAdmin(admin.ModelAdmin):
     #list_per_page = 2
     # list_editable = ['has_homework',]
 
+
 class RoleAdmin(admin.ModelAdmin):
     # fieldsets = [
     #     ('名称', {'fields': ['nickname','username']}),
@@ -45,16 +47,16 @@ class RoleAdmin(admin.ModelAdmin):
     # fields = ['name', 'user',]
     pass
 
+
 class RecommendAdmin(admin.ModelAdmin):
     # fieldsets = [
     #     ('名称', {'fields': ['nickname','username']}),
     #     ('密码', {'fields': ['password','paypassword']}),
     # ]
-    fields = ['parent', 'child',]
+    fields = ['parent', 'child', ]
+
 
 # 注册
-admin.site.register(User,UserAdmin)
-admin.site.register(Role,RoleAdmin)
-admin.site.register(Recommend,RecommendAdmin)
-
-
+admin.site.register(User, UserAdmin)
+admin.site.register(Role, RoleAdmin)
+admin.site.register(Recommend, RecommendAdmin)

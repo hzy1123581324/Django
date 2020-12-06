@@ -1,6 +1,6 @@
 from django.db import models
 from chat.models import User, Address
-from utils.baseModel import BaseModel
+from utils.baseModel import BaseModel, CategoryModel
 # Create your models here.
 # 多商家数据库
 
@@ -42,10 +42,10 @@ class Stores(BaseModel):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     contacttype = models.IntegerField(
         choices=CONTACTTYPE, default='1', verbose_name='联系类型')
-    contact = models.CharField(blank=True, verbose_name='联系内容')
+    contact = models.CharField(blank=True, max_length=300, verbose_name='联系内容')
     content = models.TextField(default="", verbose_name="店铺详情")
     clerk = models.ForeignKey(
-        User, on_delete=models.CASCADE, verbose_name='店员')
+        'Clerk', on_delete=models.CASCADE, verbose_name='店员')
 
 
 class Clerk(BaseModel):
@@ -53,8 +53,8 @@ class Clerk(BaseModel):
         店员表
 
     '''
-    name = models.CharField(verbose_name='职位')
-    user = models.ManyToManyField(User, '店员', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, default='', verbose_name='职位')
+    user = models.ManyToManyField(User, '店员')
 
 
 class Commodity(BaseModel):
@@ -74,7 +74,7 @@ class Commodity(BaseModel):
 
     '''
     store = models.ForeignKey(Stores, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50, verbose_name='名称')
+    name = models.CharField(max_length=50, default='', verbose_name='名称')
     caption = models.CharField(max_length=100, verbose_name='副标题')
     sales = models.IntegerField(default=0, verbose_name='销量')
     stock = models.IntegerField(default=0, verbose_name='库存')
@@ -85,7 +85,8 @@ class Commodity(BaseModel):
                                       null=True, verbose_name='主图片')
     thumbnail = models.CharField(max_length=200, default='',
                                  null=True, blank=True, verbose_name='缩略图')
-    coupons = models.ForeignKey('Coupons', blank=True, verbose_name='优惠券')
+    coupons = models.ForeignKey(
+        'Coupons', default='', blank=True, verbose_name='优惠券', on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'tb_sku'
@@ -109,29 +110,10 @@ class Commodity(BaseModel):
 #         return self.name
 
 
-class GoodsCategory(models.Model):
+class GoodsCategory(BaseModel, CategoryModel):
     """
     商品类别
     """
-    CATEGORY_TYPE = (
-        (1, "一级类目"),
-        (2, "二级类目"),
-        (3, "三级类目"),
-    )
-
-    name = models.CharField(default="", max_length=30,
-                            verbose_name="类别名", help_text="类别名")
-    code = models.CharField(default="", max_length=30,
-                            verbose_name="类别code", help_text="类别code")
-    desc = models.TextField(default="", verbose_name="类别描述", help_text="类别描述")
-
-    category_type = models.IntegerField(
-        choices=CATEGORY_TYPE, verbose_name="类目级别", help_text="类目级别")
-    parent_category = models.ForeignKey("self", null=True, blank=True, verbose_name="父类目级别", help_text="父目录",
-                                        related_name="sub_cat", on_delete=models.CASCADE)
-    is_tab = models.BooleanField(
-        default=False, verbose_name="是否导航", help_text="是否导航")
-    # add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
     class Meta:
         verbose_name = "商品类别"
@@ -145,7 +127,7 @@ class Brand(BaseModel):
     """
     品牌
     """
-    name = models.CharField(max_length=20, verbose_name='名称')
+    name = models.CharField(max_length=20, default='', verbose_name='名称')
     logo = models.ImageField(verbose_name='Logo图片')
     first_letter = models.CharField(max_length=1, verbose_name='品牌首字母')
 
@@ -178,7 +160,7 @@ class Coupons(BaseModel):
     优惠券表
 
     '''
-    worth = models.
+    # worth = models.
     pass
 
 
@@ -196,7 +178,25 @@ class Order(BaseModel):
 
 
     """
-    pass
+
+    ORDER_STATUS_CHOICES = (
+        (1, "待支付"),
+        (2, "待发货"),
+        (3, "待收货"),
+        (4, "待评价"),
+        (5, "已完成"),
+        (6, "已取消"),
+    )
+    status = models.SmallIntegerField(choices=ORDER_STATUS_CHOICES,
+                                      default=1, verbose_name="订单状态")
+
+    class Meta:
+        db_table = 'tb_order'
+        verbose_name = '订单'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.id
 
 
 class OrderDetails(BaseModel):
@@ -215,14 +215,6 @@ class OrderDetails(BaseModel):
 
     }
 
-    ORDER_STATUS_ENUM = {
-        "UNPAID": 1,       # 未支付
-        "UNSEND": 2,       # 未发货
-        "UNRECEIVED": 3,   # 未收货
-        "UNCOMMENT": 4,    # 未评论
-        "FINISHED": 5      # 已完成
-    }
-
     PAY_METHOD_CHOICES = (
         (1, "货到付款"),
         (2, "支付宝"),
@@ -231,22 +223,14 @@ class OrderDetails(BaseModel):
         (5, '支付宝+余额'),
         (6, '微信+余额'),
     )
-    ORDER_STATUS_CHOICES = (
-        (1, "待支付"),
-        (2, "待发货"),
-        (3, "待收货"),
-        (4, "待评价"),
-        (5, "已完成"),
-        (6, "已取消"),
-    )
     order = models.OneToOneField(Order, on_delete=models.CASCADE)
     # 主键, 不会生成默认的主键id
     # order_id = models.CharField(
     #     max_length=64, verbose_name="订单号")
     user = models.ForeignKey(
         User, on_delete=models.PROTECT, verbose_name="下单用户")
-    address = models.ForeignKey(Address,
-                                on_delete=models.PROTECT, verbose_name="收获地址")
+    address = models.ForeignKey(
+        Address, on_delete=models.PROTECT, verbose_name="收获地址")
     total_count = models.IntegerField(default=1, verbose_name="商品总数")
     total_amount = models.DecimalField(max_digits=10,
                                        decimal_places=2, verbose_name="商品总金额")
@@ -255,9 +239,6 @@ class OrderDetails(BaseModel):
         max_digits=10, decimal_places=2, verbose_name="运费")
     pay_method = models.SmallIntegerField(choices=PAY_METHOD_CHOICES,
                                           default=4, verbose_name="支付方式")
-
-    status = models.SmallIntegerField(choices=ORDER_STATUS_CHOICES,
-                                      default=1, verbose_name="订单状态")
 
     actual_payment = models.DecimalField(
         max_digits=10, decimal_places=2, verbose_name="实际付款")

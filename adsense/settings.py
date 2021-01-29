@@ -135,8 +135,8 @@ LANGUAGES = [
     ('zh-Hans', _('Chinese')),
 ]
 LANGUAGE_CODE = 'zh-Hans'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
+# TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

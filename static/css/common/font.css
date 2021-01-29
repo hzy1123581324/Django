@@ -86,7 +86,7 @@
 }
 .f_wrap{
 	word-wrap:break-word;
-	word-break:break-all,/* 强制英文单词断行  */
+	word-break:break-all;/* 强制英文单词断行  */
 }
 .ellipsis{
 	/*单行文本溢出*/
